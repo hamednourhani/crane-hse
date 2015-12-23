@@ -1,0 +1,24 @@
+nav.pagination{
+	@include clearfix();
+	width:100%;
+	display : block;
+	padding : 30px 10px 20px;
+	text-align : center;
+	@include clearfix;
+	a.page-numbers,span.page-numbers{
+		border : 3px solid $cream2;
+		padding : 5px 10px;
+		background-color: $white;
+		&:hover {
+			background-color: $cream2;
+			color : $white;
+		}
+		&.current{
+			background-color: $cream2;
+			color : $white;
+		}
+	}
+	span.page-numbers{
+		padding : 5px 12px;
+	}
+}
