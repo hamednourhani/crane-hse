@@ -49,22 +49,20 @@ $larg : 65em;
 }
 
 /*------ colors -----------*/
-$cream1 : #bba78f;
-$cream2 : #827A6D;
-$cream3 : #19110F;
+$yellow : #FAC11C;
 
-$brown1 : #FFA00A;
-$brown2 : #BC6809;
-$brown3 : #A35B09;
+$navy1 : #1F2D3A;
+$navy2 : #192530;
+$navy3 : #17222C;
 
-$green1 : #86D488;
-$green2 : #029352;
+$sky-blue: #90A3B5;
+
 
 $grey3: #969696;
 $grey2 : #CECECE;
 $grey1 : #EBEBEB;
 
-$black1 : #111;
+$black : #111;
 $white : #FFFFFF;
 
 $glass : rgba(0,0,0,0);
@@ -85,17 +83,11 @@ $glass : rgba(0,0,0,0);
 }
 /*----------------box-shadow----------------------*/
 
-.gold-box-shadow {
-	@include box-shadow(0px 0px 6px $brown1,inset 0px 0px 6px $brown1);
-}
-.green-box-shadow {
-	@include box-shadow(0px 0px 6px $green2,inset 0px 0px 6px $green2);
-}
 .def-box-shadow {
-	@include box-shadow(0px 0px 6px $cream2);
+	@include box-shadow(0px 0px 6px $sky-blue);
 }
 .dark-box-shadow {
-	@include box-shadow(0px 0px 6px $black1);
+	@include box-shadow(0px 0px 6px $black);
 }
 
 /*----------------gradiant----------------------*/
