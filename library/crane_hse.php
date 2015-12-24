@@ -1,12 +1,12 @@
 <?php
-/* Welcome to gsalborz :)
-This is the core gsalborz file where most of the
+/* Welcome to crane_hse :)
+This is the core crane_hse file where most of the
 main functions & features reside. If you have
 any custom functions, it's best to put them
 in the functions.php file.
 
 Developed by: Eddie Machado
-URL: http://themble.com/gsalborz/
+URL: http://themble.com/crane_hse/
 
   - head cleanup (remove rsd, uri links, junk css, ect)
   - enqueueing scripts & styles
@@ -29,7 +29,7 @@ removing all the junk we don't
 need.
 *********************/
 
-function gsalborz_head_cleanup() {
+function crane_hse_head_cleanup() {
 	// category feeds
 	// remove_action( 'wp_head', 'feed_links_extra', 3 );
 	// post and comment feeds
@@ -49,11 +49,11 @@ function gsalborz_head_cleanup() {
 	// WP version
 	remove_action( 'wp_head', 'wp_generator' );
 	// remove WP version from css
-	add_filter( 'style_loader_src', 'gsalborz_remove_wp_ver_css_js', 9999 );
+	add_filter( 'style_loader_src', 'crane_hse_remove_wp_ver_css_js', 9999 );
 	// remove Wp version from scripts
-	add_filter( 'script_loader_src', 'gsalborz_remove_wp_ver_css_js', 9999 );
+	add_filter( 'script_loader_src', 'crane_hse_remove_wp_ver_css_js', 9999 );
 
-} /* end gsalborz head cleanup */
+} /* end crane_hse head cleanup */
 
 //hide admin bar from front end
 function my_function_admin_bar(){ 
@@ -94,24 +94,24 @@ function rw_title( $title, $sep, $seplocation ) {
 } // end better title
 
 // remove WP version from RSS
-function gsalborz_rss_version() { return ''; }
+function crane_hse_rss_version() { return ''; }
 
 // remove WP version from scripts
-function gsalborz_remove_wp_ver_css_js( $src ) {
+function crane_hse_remove_wp_ver_css_js( $src ) {
 	if ( strpos( $src, 'ver=' ) )
 		$src = remove_query_arg( 'ver', $src );
 	return $src;
 }
 
 // remove injected CSS for recent comments widget
-function gsalborz_remove_wp_widget_recent_comments_style() {
+function crane_hse_remove_wp_widget_recent_comments_style() {
 	if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 		remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 	}
 }
 
 // remove injected CSS from recent comments widget
-function gsalborz_remove_recent_comments_style() {
+function crane_hse_remove_recent_comments_style() {
 	global $wp_widget_factory;
 	if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
 		remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
@@ -119,7 +119,7 @@ function gsalborz_remove_recent_comments_style() {
 }
 
 // remove injected CSS from gallery
-function gsalborz_gallery_style($css) {
+function crane_hse_gallery_style($css) {
 	return preg_replace( "!<style type='text/css'>(.*?)</style>!s", '', $css );
 }
 
@@ -129,7 +129,7 @@ SCRIPTS & ENQUEUEING
 *********************/
 
 // loading modernizr and jquery, and reply script
-function gsalborz_scripts_and_styles() {
+function crane_hse_scripts_and_styles() {
 
   global $wp_styles,$wp_scripts; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
@@ -148,14 +148,14 @@ function gsalborz_scripts_and_styles() {
 
 
 
-		wp_register_script( 'gsalborz-modernizr', get_stylesheet_directory_uri() . '/js/lib/modernizr.custom.min.js', array(), '2.5.3', false );
+		wp_register_script( 'crane_hse-modernizr', get_stylesheet_directory_uri() . '/js/lib/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
 		
 		wp_register_style( 'font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.min.css', array(), '', 'all' );
-		wp_register_style( 'gsalborz-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
-		wp_register_style( 'gsalborz-rtl-stylesheet', get_stylesheet_directory_uri() . '/css/rtl.css', array('gsalborz-stylesheet'), '', 'all' );
-		wp_register_style( 'gsalborz-ie-only', get_stylesheet_directory_uri() . '/css/ie.css', array(), '' );
+		wp_register_style( 'crane_hse-stylesheet', get_stylesheet_directory_uri() . '/css/style.css', array(), '', 'all' );
+		wp_register_style( 'crane_hse-rtl-stylesheet', get_stylesheet_directory_uri() . '/css/rtl.css', array('crane_hse-stylesheet'), '', 'all' );
+		wp_register_style( 'crane_hse-ie-only', get_stylesheet_directory_uri() . '/css/ie.css', array(), '' );
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -173,7 +173,7 @@ function gsalborz_scripts_and_styles() {
 		wp_register_script( 'flexie', get_stylesheet_directory_uri() . '/js/lib/flexie.js', array('jquery'), '', false );
 		wp_register_script( 'selectivizr', get_stylesheet_directory_uri() . '/js/lib/selectivizr-min.js', array(), '', false );
 		wp_register_script( 'cssfx', get_stylesheet_directory_uri() . '/js/lib/cssfx.js', array(), '', false );
-		wp_register_script( 'gsalborz-js', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery'), '', true );
+		wp_register_script( 'crane_hse-js', get_stylesheet_directory_uri() . '/js/scripts.js', array('jquery'), '', true );
 		
 //		wp_register_script( 'google-map', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCSatHC6AP22DyNRlWCyT8EZnEPo175cl4"', array(), '', true );
 		wp_register_script( 'map-loader', get_stylesheet_directory_uri() . '/js/map-loader.js', array('google-map'), '', true );
@@ -182,19 +182,19 @@ function gsalborz_scripts_and_styles() {
 		// enqueue styles and scripts
 		//wp_enqueue_script( 'please-wait' );
 		//wp_enqueue_script( 'please-wait-custom' );
-		//wp_enqueue_script( 'gsalborz-modernizr' );
+		//wp_enqueue_script( 'crane_hse-modernizr' );
 	
-		wp_enqueue_script( 'modernizr-gsalborz' );
+		wp_enqueue_script( 'modernizr-crane_hse' );
 
 
 		wp_enqueue_style('font-awesome' );
-		wp_enqueue_style( 'gsalborz-stylesheet' );
+		wp_enqueue_style( 'crane_hse-stylesheet' );
 		if(is_rtl()){
-			wp_enqueue_style('gsalborz-rtl-stylesheet');
+			wp_enqueue_style('crane_hse-rtl-stylesheet');
 		}
-		wp_enqueue_style( 'gsalborz-ie-only' );
+		wp_enqueue_style( 'crane_hse-ie-only' );
 
-		$wp_styles->add_data( 'gsalborz-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+		$wp_styles->add_data( 'crane_hse-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 		
 		
 
@@ -217,7 +217,7 @@ function gsalborz_scripts_and_styles() {
 
 		// wp_enqueue_script( 'onscreen' );
 		
-		wp_enqueue_script( 'gsalborz-js' );
+		wp_enqueue_script( 'crane_hse-js' );
 		
 
 			
@@ -229,7 +229,7 @@ THEME SUPPORT
 *********************/
 
 // Adding WP 3+ Functions & Theme Support
-function gsalborz_theme_support() {
+function crane_hse_theme_support() {
 
 	// wp thumbnails (sizes handled in functions.php)
 	add_theme_support( 'post-thumbnails' );
@@ -274,20 +274,20 @@ function gsalborz_theme_support() {
 	// registering wp3+ menus
 	register_nav_menus(
 		array(
-			'main-menu' => __( 'The Main Menu', 'gsalborz' ),   // main nav in header
+			'main-menu' => __( 'The Main Menu', 'crane_hse' ),   // main nav in header
 		)
 	);
 
-} /* end gsalborz theme support */
+} /* end crane_hse theme support */
 
 
 /*********************
 RELATED POSTS FUNCTION
 *********************/
 
-// Related Posts Function (call using gsalborz_related_posts(); )
-function gsalborz_related_posts() {
-	echo '<ul id="gsalborz-related-posts">';
+// Related Posts Function (call using crane_hse_related_posts(); )
+function crane_hse_related_posts() {
+	echo '<ul id="crane_hse-related-posts">';
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
@@ -305,19 +305,19 @@ function gsalborz_related_posts() {
 				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
 			<?php endforeach; }
 		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'gsalborz' ) . '</li>'; ?>
+			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'crane_hse' ) . '</li>'; ?>
 		<?php }
 	}
 	wp_reset_postdata();
 	echo '</ul>';
-} /* end gsalborz related posts function */
+} /* end crane_hse related posts function */
 
 /*********************
 PAGE NAVI
 *********************/
 
 // Numeric Page Navi (built into the theme by default)
-function gsalborz_page_navi() {
+function crane_hse_page_navi() {
   global $wp_query;
   $bignum = 999999999;
   if ( $wp_query->max_num_pages <= 1 )
@@ -342,19 +342,19 @@ RANDOM CLEANUP ITEMS
 *********************/
 
 // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-function gsalborz_filter_ptags_on_images($content){
+function crane_hse_filter_ptags_on_images($content){
 	return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 
 // This removes the annoying […] to a Read More link
-function gsalborz_excerpt_more($more) {
+function crane_hse_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-	return '<a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'gsalborz' ) . esc_attr( get_the_title( $post->ID ) ).'">'. '[...]' .'</a>';
+	return '<a class="excerpt-read-more" href="'. get_permalink( $post->ID ) . '" title="'. __( 'Read ', 'crane_hse' ) . esc_attr( get_the_title( $post->ID ) ).'">'. '[...]' .'</a>';
 }
 
-add_action('wp_head','gsalborz_inline_style' );
-function gsalborz_inline_style(){
+add_action('wp_head','crane_hse_inline_style' );
+function crane_hse_inline_style(){
 	
 }
 

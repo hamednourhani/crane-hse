@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: gsalborz 1.0\n"
+"Project-Id-Version: crane_hse 1.0\n"
 "Report-Msgid-Bugs-To: http://itstar.ir/contact-us\n"
 "POT-Creation-Date: 2015-11-29 21:20:57+00:00\n"
 "MIME-Version: 1.0\n"
@@ -1023,19 +1023,19 @@ msgstr ""
 msgid "New Product Tag Name"
 msgstr ""
 
-#: library/gsalborz.php:87
+#: library/crane_hse.php:87
 msgid "Page %s"
 msgstr ""
 
-#: library/gsalborz.php:278
+#: library/crane_hse.php:278
 msgid "The Main Menu"
 msgstr ""
 
-#: library/gsalborz.php:309
+#: library/crane_hse.php:309
 msgid "No Related Posts Yet!"
 msgstr ""
 
-#: library/gsalborz.php:354
+#: library/crane_hse.php:354
 msgid "Read "
 msgstr ""
 
@@ -1060,15 +1060,15 @@ msgid " Email : "
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "gsalborz"
+msgid "crane_hse"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://gsalborz.com"
+msgid "http://crane_hse.com"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "gsalborz Portal Theme by iTstar."
+msgid "crane_hse Portal Theme by iTstar."
 msgstr ""
 
 #. Author of the plugin/theme

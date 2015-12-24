@@ -57,7 +57,7 @@
 						<div class="top-contact-info">
 							<ul>
 								<li><i class="fa fa-phone"></i><span> +98 (21) 88245608 - 9 </span></li>
-								<li><i class="fa fa-envelope"></i><span> info@gsalborz.com </span></li>
+								<li><i class="fa fa-envelope"></i><span> info@crane_hse.com </span></li>
 							</ul>
 						</div>
 						<div class="lang-container">
@@ -74,9 +74,9 @@
 					<section class="layout">
 						<div class="site-logo-container">
 							<?php if(is_rtl()){?>
-								<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/gsalborz-logo-fa-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+								<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/crane_hse-logo-fa-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
 							<?php } else { ?>
-								<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/gsalborz-logo-en-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+								<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/crane_hse-logo-en-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
 							<?php } ?>
 						</div>
 
@@ -85,7 +85,7 @@
 						</span>
 
 						<div class="menu-search-area">
-							<?php echo gsalborz_menu_search_form(); ?>
+							<?php echo crane_hse_menu_search_form(); ?>
 						</div>
 					</section>
 				</div><!-- hero -->
@@ -96,9 +96,9 @@
 						<?php wp_nav_menu(array(
 								 'container' => false,                           // remove nav container
 								 'container_class' => 'menu cf',                 // class of container (should you choose to use it)
-								 'menu' => __( 'Main Menu', 'gsalborz' ),  // nav name
+								 'menu' => __( 'Main Menu', 'crane_hse' ),  // nav name
 								 'menu_class' => 'nav main-nav cf',
-								 // 'walker' => $walker,             // adding custom nav class
+//								 'walker' => $walker,             // adding custom nav class
 								 'theme_location' => 'main-menu',                 // where it's located in the theme
 								 'before' => '',                                 // before the menu
 								   'after' => '',                                  // after the menu

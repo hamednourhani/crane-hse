@@ -37,7 +37,7 @@
 						<?php } ?>
 					<?php } ?>		
 					<nav class="pagination">
-						<?php gsalborz_pagination(); ?>
+						<?php crane_hse_pagination(); ?>
 					</nav>		
 				</div><!-- primary -->
 

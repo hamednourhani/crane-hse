@@ -1,15 +1,15 @@
 <?php
 /*
 Author: Eddie Machado
-URL: http://themble.com/gsalborz/
+URL: http://themble.com/crane_hse/
 
 This is where you can drop your custom functions or
 just edit things like thumbnail sizes, header images,
 sidebars, comments, ect.
 */
 
-// LOAD gsalborz CORE (if you remove this, the theme will break)
-require_once( 'library/gsalborz.php' );
+// LOAD crane_hse CORE (if you remove this, the theme will break)
+require_once( 'library/crane_hse.php' );
 // require_once( 'library/notifications.php' );
 
 //Include and setup custom metaboxes and fields.
@@ -22,56 +22,56 @@ require_once( 'library/cmb-functions.php' );
  //require_once( 'library/admin.php' );
 
 /*********************
-LAUNCH gsalborz
+LAUNCH crane_hse
 Let's get everything up and running.
 *********************/
 
-function gsalborz_ahoy() {
+function crane_hse_ahoy() {
 
   //Allow editor style.
   //add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
 
   // let's get language support going, if you need it
-  load_theme_textdomain( 'gsalborz', get_template_directory() . '/languages' );
+  load_theme_textdomain( 'crane_hse', get_template_directory() . '/languages' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/custom-post-type.php' );
 
   // launching operation cleanup
-  add_action( 'init', 'gsalborz_head_cleanup' );
+  add_action( 'init', 'crane_hse_head_cleanup' );
   // A better title
   add_filter( 'wp_title', 'rw_title', 10, 3 );
   // remove WP version from RSS
-  add_filter( 'the_generator', 'gsalborz_rss_version' );
+  add_filter( 'the_generator', 'crane_hse_rss_version' );
   // remove pesky injected css for recent comments widget
-  add_filter( 'wp_head', 'gsalborz_remove_wp_widget_recent_comments_style', 1 );
+  add_filter( 'wp_head', 'crane_hse_remove_wp_widget_recent_comments_style', 1 );
   // clean up comment styles in the head
-  add_action( 'wp_head', 'gsalborz_remove_recent_comments_style', 1 );
+  add_action( 'wp_head', 'crane_hse_remove_recent_comments_style', 1 );
   // clean up gallery output in wp
-  add_filter( 'gallery_style', 'gsalborz_gallery_style' );
+  add_filter( 'gallery_style', 'crane_hse_gallery_style' );
 
   // enqueue base scripts and styles
-  add_action( 'wp_enqueue_scripts', 'gsalborz_scripts_and_styles', 999 );
+  add_action( 'wp_enqueue_scripts', 'crane_hse_scripts_and_styles', 999 );
   // ie conditional wrapper
 
   // launching this stuff after theme setup
-  gsalborz_theme_support();
+  crane_hse_theme_support();
 
   // adding sidebars to Wordpress (these are created in functions.php)
-  add_action( 'widgets_init', 'gsalborz_register_sidebars' );
+  add_action( 'widgets_init', 'crane_hse_register_sidebars' );
 
   // cleaning up random code around images
-  add_filter( 'the_content', 'gsalborz_filter_ptags_on_images' );
+  add_filter( 'the_content', 'crane_hse_filter_ptags_on_images' );
   // cleaning up excerpt
-  add_filter( 'excerpt_more', 'gsalborz_excerpt_more' );
+  add_filter( 'excerpt_more', 'crane_hse_excerpt_more' );
 
-} /* end gsalborz ahoy */
+} /* end crane_hse ahoy */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'gsalborz_ahoy' );
+add_action( 'after_setup_theme', 'crane_hse_ahoy' );
 
-add_action( 'after_setup_theme', 'gsalborz_woocommerce_support' );
-function gsalborz_woocommerce_support() {
+add_action( 'after_setup_theme', 'crane_hse_woocommerce_support' );
+function crane_hse_woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 /************* OEMBED SIZE OPTIONS *************/
@@ -88,9 +88,9 @@ add_image_size( 'product-thumb', 270, 270, array( 'center', 'center' ) );
 add_image_size( 'archive-thumb', 163, 163, array( 'center', 'center' ) );
 add_image_size( 'widget-thumb', 53, 53, array( 'center', 'center' ) );
 
-add_filter( 'image_size_names_choose', 'gsalborz_custom_image_sizes' );
+add_filter( 'image_size_names_choose', 'crane_hse_custom_image_sizes' );
 
-function gsalborz_custom_image_sizes( $sizes ) {
+function crane_hse_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'banner' => __('1040px by 430px'),
         'archive-thumb' => __('270px by 270px'),
@@ -111,7 +111,7 @@ new image size.
 /************* THEME CUSTOMIZE *********************/
 
 
-function gsalborz_theme_customizer($wp_customize) {
+function crane_hse_theme_customizer($wp_customize) {
   // $wp_customize calls go here.
   //
   // Uncomment the below lines to remove the default customize sections
@@ -130,16 +130,16 @@ function gsalborz_theme_customizer($wp_customize) {
   // $wp_customize->get_section('background_image')->title = __( 'Images' );
 }
 
-add_action( 'customize_register', 'gsalborz_theme_customizer' );
+add_action( 'customize_register', 'crane_hse_theme_customizer' );
 
 /************* ACTIVE SIDEBARS ********************/
 
 // Sidebars & Widgetizes Areas
-function gsalborz_register_sidebars() {
+function crane_hse_register_sidebars() {
   register_sidebar(array(
     'id' => 'sidebar',
-    'name' => __( 'Sidebar', 'gsalborz' ),
-    'description' => __( 'The first (primary) sidebar.', 'gsalborz' ),
+    'name' => __( 'Sidebar', 'crane_hse' ),
+    'description' => __( 'The first (primary) sidebar.', 'crane_hse' ),
     'before_widget' => '<aside id="%1$s" class="widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
@@ -147,8 +147,8 @@ function gsalborz_register_sidebars() {
   ));
   register_sidebar(array(
     'id' => 'footer-col1',
-    'name' => __( 'Footer first col', 'gsalborz' ),
-    'description' => __( 'The first footer widget area', 'gsalborz' ),
+    'name' => __( 'Footer first col', 'crane_hse' ),
+    'description' => __( 'The first footer widget area', 'crane_hse' ),
     'before_widget' => '<aside id="%1$s" class="footer-first footer-col1 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
@@ -156,8 +156,8 @@ function gsalborz_register_sidebars() {
   ));
   register_sidebar(array(
     'id' => 'footer-col2',
-    'name' => __( 'Footer 2d col', 'gsalborz' ),
-    'description' => __( 'The first footer widget area', 'gsalborz' ),
+    'name' => __( 'Footer 2d col', 'crane_hse' ),
+    'description' => __( 'The first footer widget area', 'crane_hse' ),
     'before_widget' => '<aside id="%1$s" class="footer-first footer-col2 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
@@ -165,8 +165,8 @@ function gsalborz_register_sidebars() {
   ));
   register_sidebar(array(
     'id' => 'footer-col3',
-    'name' => __( 'Footer 3rd col', 'gsalborz' ),
-    'description' => __( 'The first footer widget area', 'gsalborz' ),
+    'name' => __( 'Footer 3rd col', 'crane_hse' ),
+    'description' => __( 'The first footer widget area', 'crane_hse' ),
     'before_widget' => '<aside id="%1$s" class="footer-first footer-col3 widget %2$s">',
     'after_widget' => '</aside>',
     'before_title' => '<h4 class="widgettitle">',
@@ -174,8 +174,8 @@ function gsalborz_register_sidebars() {
   ));
    register_sidebar(array(
      'id' => 'footer-col4',
-     'name' => __( 'Footer 4th Col', 'gsalborz' ),
-     'description' => __( 'The first footer widget area', 'gsalborz' ),
+     'name' => __( 'Footer 4th Col', 'crane_hse' ),
+     'description' => __( 'The first footer widget area', 'crane_hse' ),
      'before_widget' => '<aside id="%1$s" class="footer-first footer-col4 widget %2$s">',
      'after_widget' => '</aside>',
      'before_title' => '<h4 class="widgettitle">',
@@ -190,7 +190,7 @@ function gsalborz_register_sidebars() {
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout
-function gsalborz_comments( $comment, $args, $depth ) {
+function crane_hse_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
   <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
     <article  class="cf">
@@ -208,13 +208,13 @@ function gsalborz_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'gsalborz' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'gsalborz' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'gsalborz' )); ?> </a></time>
+        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'crane_hse' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'crane_hse' ),'  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'crane_hse' )); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'gsalborz' ) ?></p>
+          <p><?php _e( 'Your comment is awaiting moderation.', 'crane_hse' ) ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">
@@ -227,31 +227,31 @@ function gsalborz_comments( $comment, $args, $depth ) {
 } // don't remove this bracket!
 
 
-function gsalborz_pagination(){
+function crane_hse_pagination(){
   global $wp_query;
 
     if($wp_query->max_num_pages > 1){
         $big = 999999999;
-        echo /*__('Page : ','gsalborz').*/paginate_links( array(
+        echo /*__('Page : ','crane_hse').*/paginate_links( array(
           'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
           'format' => '?paged=%#%',
           'current' => max( 1, get_query_var('paged') ),
           'total' => $wp_query->max_num_pages,
-          'prev_text'    => __('<i class="fa fa-angle-double-left"></i>','gsalborz'),
-          'next_text'    => __('<i class="fa fa-angle-double-right"></i>','gsalborz')
+          'prev_text'    => __('<i class="fa fa-angle-double-left"></i>','crane_hse'),
+          'next_text'    => __('<i class="fa fa-angle-double-right"></i>','crane_hse')
         ) );
       }
 }
 
 
-function gsalborz_SearchFilter($query) {
+function crane_hse_SearchFilter($query) {
     if ($query->is_search) {
       $query->set('post_type', array('post','product'));
     }
     return $query;
     }
 
-add_filter('pre_get_posts','gsalborz_SearchFilter');
+add_filter('pre_get_posts','crane_hse_SearchFilter');
 
 // Enable support for HTML5 markup.
   add_theme_support( 'html5', array(
@@ -264,7 +264,7 @@ add_filter('pre_get_posts','gsalborz_SearchFilter');
 
 /*---------------Widgets----------------------*/
 
-function gsalborz_get_image_src($src="" , $size=""){
+function crane_hse_get_image_src($src="" , $size=""){
     $path_info = pathinfo($src);
     return $path_info['dirname'].'/'.$path_info['filename'].'-'.$size.'.'.$path_info['extension'];
 }
@@ -274,13 +274,13 @@ function gsalborz_get_image_src($src="" , $size=""){
 
 
 
-function gsalborz_search_form( $form ) {
+function crane_hse_search_form( $form ) {
   global $post,$wp_query,$wpdb;
 
 
-  if( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE == 'en'){
+  if( defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','gsalborz' ) . '</label>
+      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','crane_hse' ) . '</label>
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
       <input type="submit" value="' .  __( 'Search' ) . '" name="submit" id="submit" />
       <input type="hidden" name="lang" value="'.ICL_LANGUAGE_CODE.'"/>
@@ -288,7 +288,7 @@ function gsalborz_search_form( $form ) {
       </form>';
   } else {
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','gsalborz') . '</label>
+      <div><label class="screen-reader-text" for="s">' . __( 'Search for:','crane_hse') . '</label>
       <input type="text" value="' . get_search_query() . '" name="s" id="s" />
       <input type="submit" value="' .  __( 'Search' ) . '" name="submit" id="submit" />
       </div>
@@ -297,11 +297,11 @@ function gsalborz_search_form( $form ) {
 
   return $form;
 }
-function gsalborz_menu_search_form() {
+function crane_hse_menu_search_form() {
   global $post,$wp_query,$wpdb;
 
 
-  if( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE == 'en'){
+  if( defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE == 'en'){
       $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
       <div class="search-form-inner">
         <input type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="' .  __( 'Search' ) . '"/>
@@ -323,14 +323,14 @@ function gsalborz_menu_search_form() {
 
 
 
-function gsalborz_excerpt_length( $length ) {
+function crane_hse_excerpt_length( $length ) {
   return 20;
 }
-add_filter( 'excerpt_length', 'gsalborz_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'crane_hse_excerpt_length', 999 );
 
 
 
-if ( ICL_LANGUAGE_CODE && ICL_LANGUAGE_CODE=='en'){
+if ( defined('ICL_LANGUAGE_CODE') && ICL_LANGUAGE_CODE=='en'){
 
         remove_filter('the_title', 'ztjalali_persian_num');
         remove_filter('the_content', 'ztjalali_persian_num');
@@ -357,10 +357,10 @@ class contact_info_widget extends WP_Widget {
         'contact_info_widget',
 
         // Widget name will appear in UI
-        __('Contact Informaion Widget', 'gsalborz'),
+        __('Contact Informaion Widget', 'crane_hse'),
 
         // Widget description
-        array( 'description' => __( 'Display Contact Information', 'gsalborz' ), )
+        array( 'description' => __( 'Display Contact Information', 'crane_hse' ), )
         );
     }
 
@@ -377,10 +377,10 @@ class contact_info_widget extends WP_Widget {
 
 
         $content = '<main class="widgetbody">';
-        $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','gsalborz').$address.'</p>';
-        $content .='<p><i class="fa fa-phone"></i>'.__('Phone : ','gsalborz').$phone.'</p>';
-        $content .='<p><i class="fa fa-fax"></i>'.__('Fax : ','gsalborz').$fax.'</p>';
-        $content .='<p><i class="fa fa-envelope"></i>'.__('Email : ','gsalborz').$email.'</p>';
+        $content .='<p><i class="fa fa-map-marker"></i>'.__('Address : ','crane_hse').$address.'</p>';
+        $content .='<p><i class="fa fa-phone"></i>'.__('Phone : ','crane_hse').$phone.'</p>';
+        $content .='<p><i class="fa fa-fax"></i>'.__('Fax : ','crane_hse').$fax.'</p>';
+        $content .='<p><i class="fa fa-envelope"></i>'.__('Email : ','crane_hse').$email.'</p>';
         $content .= '</main>';
 
         // before and after widget arguments are defined by themes
@@ -398,7 +398,7 @@ class contact_info_widget extends WP_Widget {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
         }else {
-            $title = __( 'Last Posts', 'gsalborz' );
+            $title = __( 'Last Posts', 'crane_hse' );
         }
 
         if ( isset( $instance[ 'address' ] ) ) {
@@ -433,23 +433,23 @@ class contact_info_widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address :','gsalborz' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'address' ); ?>"><?php _e( 'Address :','crane_hse' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'address' ); ?>" name="<?php echo $this->get_field_name( 'address' ); ?>" type="text" value="<?php echo esc_attr( $address ); ?>" />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php _e( 'Phone :','gsalborz' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'phone' ); ?>"><?php _e( 'Phone :','crane_hse' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'phone' ); ?>" name="<?php echo $this->get_field_name( 'phone' ); ?>" type="text" value="<?php echo esc_attr( $phone ); ?>" />
         </p>
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'fax' ); ?>"><?php _e( 'Fax :','gsalborz' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'fax' ); ?>"><?php _e( 'Fax :','crane_hse' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'fax' ); ?>" name="<?php echo $this->get_field_name( 'fax' ); ?>" type="text" value="<?php echo esc_attr( $fax ); ?>" />
         </p>
 
 
 
         <p>
-            <label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e( 'Email Address :','gsalborz' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'email' ); ?>"><?php _e( 'Email Address :','crane_hse' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'email' ); ?>" name="<?php echo $this->get_field_name( 'email' ); ?>" type="text" value="<?php echo esc_attr( $email ); ?>" />
         </p>
 
@@ -480,10 +480,10 @@ class last_posts_by_cat_widget extends WP_Widget {
         'last_posts_by_cat_widget',
 
         // Widget name will appear in UI
-        __('Last Posts By Category Widget', 'gsalborz'),
+        __('Last Posts By Category Widget', 'crane_hse'),
 
         // Widget description
-        array( 'description' => __( 'Display Last Posts in Category', 'gsalborz' ), )
+        array( 'description' => __( 'Display Last Posts in Category', 'crane_hse' ), )
         );
     }
 
@@ -533,7 +533,7 @@ class last_posts_by_cat_widget extends WP_Widget {
         if ( isset( $instance[ 'title' ] ) ) {
             $title = $instance[ 'title' ];
         }else {
-            $title = __( 'Last Posts', 'gsalborz' );
+            $title = __( 'Last Posts', 'crane_hse' );
         }
         if ( isset( $instance[ 'number' ] ) ) {
             $number = $instance[ 'number' ];
@@ -552,11 +552,11 @@ class last_posts_by_cat_widget extends WP_Widget {
             <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
         </p>
          <p>
-            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Post Numbers :','gsalborz' ); ?></label>
+            <label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Post Numbers :','crane_hse' ); ?></label>
             <input class="widefat" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="text" value="<?php echo esc_attr( $number ); ?>" />
         </p>
         <p>
-        <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Post Category :','gsalborz' ); ?></label>
+        <label for="<?php echo $this->get_field_id( 'cat' ); ?>"><?php _e( 'Post Category :','crane_hse' ); ?></label>
         <?php wp_dropdown_categories(array(
                   'name'               => $this->get_field_name( 'cat' ),
                   'id'                 => $this->get_field_id( 'cat' ),
@@ -581,15 +581,15 @@ class last_posts_by_cat_widget extends WP_Widget {
 
 
 // Register and load the widget
-function gsalborz_widget() {
+function crane_hse_widget() {
 //  register_widget( 'last_products_widget' );
   register_widget( 'last_posts_by_cat_widget' );
   register_widget( 'contact_info_widget' );
 }
-add_action( 'widgets_init', 'gsalborz_widget' );
+add_action( 'widgets_init', 'crane_hse_widget' );
 
 /*-----------Shortcodes-------------------------------*/
-function gsalborz_products_in_cat( $atts, $content = null ) {
+function crane_hse_products_in_cat( $atts, $content = null ) {
    global $wp_query;
     $a = shortcode_atts( array(
         'cat' => '',
@@ -639,9 +639,61 @@ $products = get_posts(array(
   <?php }
   wp_reset_postdata();
 }
-add_shortcode( 'products', 'gsalborz_products_in_cat' );
+add_shortcode( 'products', 'crane_hse_products_in_cat' );
 
 
+class Menu_With_Image extends Walker_Nav_Menu {
+  function start_el(&$output, $item, $depth = '0', $args = array(), $id = '0') {
+    global $wp_query;
 
+    $class_names = $value = '';
+    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+
+    global $sub_wrapper_before;
+    $sub_wrapper_before = "";
+    global $sub_wrapper_after;
+    $sub_wrapper_after = '';
+
+    if(in_array('mega-menu',$classes)){
+      $sub_wrapper_before = '<div class="sub-menu-wrap">';
+      $sub_wrapper_after = '</div>';
+    }
+
+
+    $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
+    $output .= "\n$indent\n";
+
+    $menu_thumb = "";
+    if($item->object == 'post'){
+       $menu_thumb = get_the_post_thumbnail($item->object_id , 'widget-thumb');
+       //var_dump($menu_thumb);
+    }
+    $products = array();
+    $sub_content = "";
+
+    if($item->object == 'category'){
+        $term = get_term($item->object_id,'category');
+
+        //var_dump($instance);
+        $products = get_posts(array(
+            'post_type' => 'post',
+            'posts_per_page' => -1,
+            'category'         => $term->slug,
+            )
+        );
+        //var_dump($products);
+        $sub_content = '<ul class="sub-menu">'.$sub_wrapper_before;
+        foreach($products as $product) : setup_postdata( $product );
+          //var_dump($product);
+          $url = get_the_permalink($product->ID);
+          $thumb = get_the_post_thumbnail($product->ID,'widget-thumb');
+          $name = $product->post_title;
+          $sub_content .='<li id="menu-item-'.$product->ID.'" class="menu-item product-item menu-item-type-post_type menu-item-object-product"><a href="'.$url.'">'.$thumb.$name.'</a></li>';
+        endforeach;
+        $sub_content .= '</ul>';
+
+    }
+  }
+}
 
 ?>

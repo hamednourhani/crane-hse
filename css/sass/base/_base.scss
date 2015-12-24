@@ -15,9 +15,12 @@ body,html{
 body {
 	
 	// @extend .back-gradiant-ltr;
-	//@include background(image-url("pattern_6.png") top left);
-	background-color: $grey1;
-	font-family : $open-sans,$serif;
+	background-color: $navy1;
+	@include background( image-url("tp-pattern.png") top left);
+
+	//background-color: $navy1;
+	color : $sky-blue;
+	font-family : "Open Sans";
 	direction : ltr;
 	font-size : 100%;
 	max-width : 1400px;
@@ -26,11 +29,14 @@ body {
 	line-height : 180%;
 	p{
 		text-align : justify;
-		color : darken($grey3,10%);
+		color : $sky-blue,10%;
 	}
 	form{
 		text-align:left;
 		direction : ltr;
+	}
+	h1,h2,h3,h4,h5,h6{
+		color : $white;
 	}
 		
 	

@@ -1,5 +1,5 @@
 <?php
-/* gsalborz Custom Post Type Example
+/* crane_hse Custom Post Type Example
 This page walks you through creating 
 a custom post type and taxonomies. You
 can edit this one or copy the following code 
@@ -11,14 +11,14 @@ and change things if they are concentrated
 in their own file.
 
 Developed by: Eddie Machado
-URL: http://themble.com/gsalborz/
+URL: http://themble.com/crane_hse/
 */
 
 // Flush rewrite rules for custom post types
-add_action( 'after_switch_theme', 'gsalborz_flush_rewrite_rules' );
+add_action( 'after_switch_theme', 'crane_hse_flush_rewrite_rules' );
 
 // Flush your rewrite rules
-function gsalborz_flush_rewrite_rules() {
+function crane_hse_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 
@@ -28,21 +28,21 @@ function gsalborz_flush_rewrite_rules() {
 //	register_post_type( 'product', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 //		// let's now add all the options for this post type
 //		array( 'labels' => array(
-//			'name' => __( 'Product', 'gsalborz' ), /* This is the Title of the Group */
-//			'singular_name' => __( 'Product', 'gsalborz' ), /* This is the individual type */
-//			'all_items' => __( 'All Products', 'gsalborz' ), /* the all items menu item */
-//			'add_new' => __( 'Add New', 'gsalborz' ), /* The add new menu item */
-//			'add_new_item' => __( 'Add New Products', 'gsalborz' ), /* Add New Display Title */
-//			'edit' => __( 'Edit', 'gsalborz' ), /* Edit Dialog */
-//			'edit_item' => __( 'Edit Product', 'gsalborz' ), /* Edit Display Title */
-//			'new_item' => __( 'New Product', 'gsalborz' ), /* New Display Title */
-//			'view_item' => __( 'View Product', 'gsalborz' ), /* View Display Title */
-//			'search_items' => __( 'Search Products', 'gsalborz' ), /* Search Custom Type Title */
-//			'not_found' =>  __( 'Nothing found in the Database.', 'gsalborz' ), /* This displays if there are no entries yet */
-//			'not_found_in_trash' => __( 'Nothing found in Trash', 'gsalborz' ), /* This displays if there is nothing in the trash */
+//			'name' => __( 'Product', 'crane_hse' ), /* This is the Title of the Group */
+//			'singular_name' => __( 'Product', 'crane_hse' ), /* This is the individual type */
+//			'all_items' => __( 'All Products', 'crane_hse' ), /* the all items menu item */
+//			'add_new' => __( 'Add New', 'crane_hse' ), /* The add new menu item */
+//			'add_new_item' => __( 'Add New Products', 'crane_hse' ), /* Add New Display Title */
+//			'edit' => __( 'Edit', 'crane_hse' ), /* Edit Dialog */
+//			'edit_item' => __( 'Edit Product', 'crane_hse' ), /* Edit Display Title */
+//			'new_item' => __( 'New Product', 'crane_hse' ), /* New Display Title */
+//			'view_item' => __( 'View Product', 'crane_hse' ), /* View Display Title */
+//			'search_items' => __( 'Search Products', 'crane_hse' ), /* Search Custom Type Title */
+//			'not_found' =>  __( 'Nothing found in the Database.', 'crane_hse' ), /* This displays if there are no entries yet */
+//			'not_found_in_trash' => __( 'Nothing found in Trash', 'crane_hse' ), /* This displays if there is nothing in the trash */
 //			'parent_item_colon' => ''
 //			), /* end of arrays */
-//			'description' => __( 'This is a Product', 'gsalborz' ), /* Custom Type Description */
+//			'description' => __( 'This is a Product', 'crane_hse' ), /* Custom Type Description */
 //			'public' => true,
 //			'show_in_nav_menus' => true,
 //			'publicly_queryable' => true,
@@ -73,21 +73,21 @@ function gsalborz_flush_rewrite_rules() {
 //	register_post_type( 'pharmacy', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
 //		// let's now add all the options for this post type
 //		array( 'labels' => array(
-//			'name' => __( 'pharmacy', 'gsalborz' ), /* This is the Title of the Group */
-//			'singular_name' => __( 'pharmacy', 'gsalborz' ), /* This is the individual type */
-//			'all_items' => __( 'All pharmacys', 'gsalborz' ), /* the all items menu item */
-//			'add_new' => __( 'Add New', 'gsalborz' ), /* The add new menu item */
-//			'add_new_item' => __( 'Add New pharmacy', 'gsalborz' ), /* Add New Display Title */
-//			'edit' => __( 'Edit', 'gsalborz' ), /* Edit Dialog */
-//			'edit_item' => __( 'Edit pharmacy', 'gsalborz' ), /* Edit Display Title */
-//			'new_item' => __( 'New pharmacy', 'gsalborz' ), /* New Display Title */
-//			'view_item' => __( 'View pharmacy', 'gsalborz' ), /* View Display Title */
-//			'search_items' => __( 'Search pharmacys', 'gsalborz' ), /* Search Custom Type Title */
-//			'not_found' =>  __( 'Nothing found in the Database.', 'gsalborz' ), /* This displays if there are no entries yet */
-//			'not_found_in_trash' => __( 'Nothing found in Trash', 'gsalborz' ), /* This displays if there is nothing in the trash */
+//			'name' => __( 'pharmacy', 'crane_hse' ), /* This is the Title of the Group */
+//			'singular_name' => __( 'pharmacy', 'crane_hse' ), /* This is the individual type */
+//			'all_items' => __( 'All pharmacys', 'crane_hse' ), /* the all items menu item */
+//			'add_new' => __( 'Add New', 'crane_hse' ), /* The add new menu item */
+//			'add_new_item' => __( 'Add New pharmacy', 'crane_hse' ), /* Add New Display Title */
+//			'edit' => __( 'Edit', 'crane_hse' ), /* Edit Dialog */
+//			'edit_item' => __( 'Edit pharmacy', 'crane_hse' ), /* Edit Display Title */
+//			'new_item' => __( 'New pharmacy', 'crane_hse' ), /* New Display Title */
+//			'view_item' => __( 'View pharmacy', 'crane_hse' ), /* View Display Title */
+//			'search_items' => __( 'Search pharmacys', 'crane_hse' ), /* Search Custom Type Title */
+//			'not_found' =>  __( 'Nothing found in the Database.', 'crane_hse' ), /* This displays if there are no entries yet */
+//			'not_found_in_trash' => __( 'Nothing found in Trash', 'crane_hse' ), /* This displays if there is nothing in the trash */
 //			'parent_item_colon' => ''
 //			), /* end of arrays */
-//			'description' => __( 'This is a pharmacy', 'gsalborz' ), /* Custom Type Description */
+//			'description' => __( 'This is a pharmacy', 'crane_hse' ), /* Custom Type Description */
 //			'public' => true,
 //			'show_in_nav_menus' => true,
 //			'publicly_queryable' => true,
@@ -132,16 +132,16 @@ function gsalborz_flush_rewrite_rules() {
 //		array('product'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 //		array('hierarchical' => true,     /* if this is true, it acts like categories */
 //			'labels' => array(
-//				'name' => __( 'Product Categories', 'gsalborz' ), /* name of the custom taxonomy */
-//				'singular_name' => __( 'Product Category', 'gsalborz' ), /* single taxonomy name */
-//				'search_items' =>  __( 'Search Product Categories', 'gsalborz' ), /* search title for taxomony */
-//				'all_items' => __( 'All Product Categories', 'gsalborz' ), /* all title for taxonomies */
-//				'parent_item' => __( 'Parent Product Category', 'gsalborz' ), /* parent title for taxonomy */
-//				'parent_item_colon' => __( 'Parent Product Category:', 'gsalborz' ), /* parent taxonomy title */
-//				'edit_item' => __( 'Edit Product Category', 'gsalborz' ), /* edit custom taxonomy title */
-//				'update_item' => __( 'Update Product Category', 'gsalborz' ), /* update title for taxonomy */
-//				'add_new_item' => __( 'Add New Product Category', 'gsalborz' ), /* add new title for taxonomy */
-//				'new_item_name' => __( 'New Product Category Name', 'gsalborz' ) /* name title for taxonomy */
+//				'name' => __( 'Product Categories', 'crane_hse' ), /* name of the custom taxonomy */
+//				'singular_name' => __( 'Product Category', 'crane_hse' ), /* single taxonomy name */
+//				'search_items' =>  __( 'Search Product Categories', 'crane_hse' ), /* search title for taxomony */
+//				'all_items' => __( 'All Product Categories', 'crane_hse' ), /* all title for taxonomies */
+//				'parent_item' => __( 'Parent Product Category', 'crane_hse' ), /* parent title for taxonomy */
+//				'parent_item_colon' => __( 'Parent Product Category:', 'crane_hse' ), /* parent taxonomy title */
+//				'edit_item' => __( 'Edit Product Category', 'crane_hse' ), /* edit custom taxonomy title */
+//				'update_item' => __( 'Update Product Category', 'crane_hse' ), /* update title for taxonomy */
+//				'add_new_item' => __( 'Add New Product Category', 'crane_hse' ), /* add new title for taxonomy */
+//				'new_item_name' => __( 'New Product Category Name', 'crane_hse' ) /* name title for taxonomy */
 //			),
 //			'show_admin_column' => true,
 //			'show_ui' => true,
@@ -157,16 +157,16 @@ function gsalborz_flush_rewrite_rules() {
 //		array('product'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
 //		array('hierarchical' => false,    /* if this is false, it acts like tags */
 //			'labels' => array(
-//				'name' => __( 'Product Tags', 'gsalborz' ), /* name of the custom taxonomy */
-//				'singular_name' => __( 'Product Tag', 'gsalborz' ), /* single taxonomy name */
-//				'search_items' =>  __( 'Search Product Tags', 'gsalborz' ), /* search title for taxomony */
-//				'all_items' => __( 'All Product Tags', 'gsalborz' ), /* all title for taxonomies */
-//				'parent_item' => __( 'Parent Product Tag', 'gsalborz' ), /* parent title for taxonomy */
-//				'parent_item_colon' => __( 'Parent Product Tag:', 'gsalborz' ), /* parent taxonomy title */
-//				'edit_item' => __( 'Edit Product Tag', 'gsalborz' ), /* edit custom taxonomy title */
-//				'update_item' => __( 'Update Product Tag', 'gsalborz' ), /* update title for taxonomy */
-//				'add_new_item' => __( 'Add New Product Tag', 'gsalborz' ), /* add new title for taxonomy */
-//				'new_item_name' => __( 'New Product Tag Name', 'gsalborz' ) /* name title for taxonomy */
+//				'name' => __( 'Product Tags', 'crane_hse' ), /* name of the custom taxonomy */
+//				'singular_name' => __( 'Product Tag', 'crane_hse' ), /* single taxonomy name */
+//				'search_items' =>  __( 'Search Product Tags', 'crane_hse' ), /* search title for taxomony */
+//				'all_items' => __( 'All Product Tags', 'crane_hse' ), /* all title for taxonomies */
+//				'parent_item' => __( 'Parent Product Tag', 'crane_hse' ), /* parent title for taxonomy */
+//				'parent_item_colon' => __( 'Parent Product Tag:', 'crane_hse' ), /* parent taxonomy title */
+//				'edit_item' => __( 'Edit Product Tag', 'crane_hse' ), /* edit custom taxonomy title */
+//				'update_item' => __( 'Update Product Tag', 'crane_hse' ), /* update title for taxonomy */
+//				'add_new_item' => __( 'Add New Product Tag', 'crane_hse' ), /* add new title for taxonomy */
+//				'new_item_name' => __( 'New Product Tag Name', 'crane_hse' ) /* name title for taxonomy */
 //			),
 //			'show_admin_column' => true,
 //			'show_ui' => true,

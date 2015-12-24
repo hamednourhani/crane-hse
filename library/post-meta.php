@@ -9,9 +9,9 @@
 
 							
 							<?php if( 'post' == get_post_type() && is_singular()){
-											// $cat_list =get_the_term_list( get_the_ID(), 'news_cat', '<span class="cats-title">' . __( 'News category :', 'gsalborz' ) . '</span> ', ', ' );
-											$tag_list =get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags :', 'gsalborz' ) . '</span> ', ', ' );
-											$cat_list =get_the_term_list( get_the_ID(), 'category', '<span class="cats-title">' . __( 'Categories :', 'gsalborz' ) . '</span> ', ', ' );
+											// $cat_list =get_the_term_list( get_the_ID(), 'news_cat', '<span class="cats-title">' . __( 'News category :', 'crane_hse' ) . '</span> ', ', ' );
+											$tag_list =get_the_term_list( get_the_ID(), 'post_tag', '<span class="tags-title">' . __( 'Tags :', 'crane_hse' ) . '</span> ', ', ' );
+											$cat_list =get_the_term_list( get_the_ID(), 'category', '<span class="cats-title">' . __( 'Categories :', 'crane_hse' ) . '</span> ', ', ' );
 											?>
 								
 									

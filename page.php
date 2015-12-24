@@ -12,7 +12,7 @@
 						<div class="primary">
 
 							<article class="hentry">
-								<?php if( get_post_meta(get_the_ID(),'_gsalborz_title',1 ) !== 'no'){ ?>
+								<?php if( get_post_meta(get_the_ID(),'_crane_hse_title',1 ) !== 'no'){ ?>
 									<header class="article-title">
 											<h1><?php the_title(); ?></h1>
 									</header>

@@ -9,7 +9,8 @@ input[type=submit],button{
     //border-radius : 5px;
     &:hover,&:focus{
     	background-color: $yellow;
-        bordr-color : $yellow;
+        border-color : $yellow;
+        color : $white;
     }
     &#searchsubmit{
     	padding : 8px 15px;
