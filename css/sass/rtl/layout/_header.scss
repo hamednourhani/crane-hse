@@ -1,0 +1,22 @@
+.site-header{
+  background-color: $yellow;
+  color : $navy2;
+}
+.hero{
+  .site-logo-container{
+    @include span-columns(12,12);
+    @include at-breakpoint($medium){
+      @include span-columns(6,12);
+    }
+
+  }
+  .top-contact-info{
+    @include span-columns(12,12);
+    @include at-breakpoint($medium){
+      @include span-columns(6 omega ,12);
+    }
+
+  }
+
+
+}

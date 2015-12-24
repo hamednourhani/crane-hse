@@ -245,6 +245,36 @@ body {
   left: auto; }
 
 /* mixins */
+/* line 1, sass/rtl/layout/_header.scss */
+.site-header {
+  background-color: #FAC11C;
+  color: #192530; }
+
+/* line 6, sass/rtl/layout/_header.scss */
+.hero .site-logo-container {
+  width: 100%;
+  float: right;
+  margin-left: 1.53846%;
+  display: inline; }
+  @media (min-width: 45em) {
+    /* line 6, sass/rtl/layout/_header.scss */
+    .hero .site-logo-container {
+      width: 49.23077%;
+      float: right;
+      margin-left: 1.53846%; } }
+/* line 13, sass/rtl/layout/_header.scss */
+.hero .top-contact-info {
+  width: 100%;
+  float: right;
+  margin-left: 1.53846%;
+  display: inline; }
+  @media (min-width: 45em) {
+    /* line 13, sass/rtl/layout/_header.scss */
+    .hero .top-contact-info {
+      width: 49.23077%;
+      float: left;
+      margin-left: 0; } }
+
 /* dividers style */
 /* table style */
 /* other style */

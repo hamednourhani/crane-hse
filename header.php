@@ -52,39 +52,18 @@
 
 			<div class="header-inner">
 
-				<div class="top-bar">
-					<section class="layout">
-						<div class="top-contact-info">
-							<ul>
-								<li><i class="fa fa-phone"></i><span> +98 (21) 88245608 - 9 </span></li>
-								<li><i class="fa fa-envelope"></i><span> info@crane_hse.com </span></li>
-							</ul>
-						</div>
-						<div class="lang-container">
-							<?php
-								if(function_exists('icl_language_selector')) {
-									do_action('icl_language_selector');
-								}
-							?>
-						</div>
-					</section>
-				</div><!--top-bar-->
-
 				<div class="hero">
 					<section class="layout">
 						<div class="site-logo-container">
-							<?php if(is_rtl()){?>
-								<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/crane_hse-logo-fa-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
-							<?php } else { ?>
-								<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/crane_hse-logo-en-300.png" alt="<?php echo get_bloginfo('url'); ?>"/>
-							<?php } ?>
+							<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/hse-logo-navy-120.png" alt="<?php echo get_bloginfo('url'); ?>"/>
 						</div>
 
-						<span class="menu-toggler" id="menu-toggler">
-							<i class="fa fa-bars"></i>
-						</span>
+						<div class="top-contact-info">
+							<ul>
+								<li><i class="fa fa-phone"></i><span> +98 (21) 99999999 </span></li>
+								<li><i class="fa fa-envelope"></i><span> info@crane_hse.com </span></li>
+							</ul>
 
-						<div class="menu-search-area">
 							<?php echo crane_hse_menu_search_form(); ?>
 						</div>
 					</section>
@@ -93,6 +72,9 @@
 
 				<nav role="navigation" class="main-menu" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
 					<section class="layout">
+						<span class="menu-toggler" id="menu-toggler">
+							<i class="fa fa-bars"></i>
+						</span>
 						<?php wp_nav_menu(array(
 								 'container' => false,                           // remove nav container
 								 'container_class' => 'menu cf',                 // class of container (should you choose to use it)
