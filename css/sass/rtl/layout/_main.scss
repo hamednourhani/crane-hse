@@ -1,0 +1,37 @@
+.site-main{
+  margin-top : 30px;
+  margin-bottom : 30px;
+  .site-content {
+    .primary {
+      @include span-columns(12, 12);
+      @include at-breakpoint($medium) {
+        @include span-columns(8, 12);
+        margin-right: auto;
+      }
+
+    }
+    .secondary {
+      @include span-columns(12, 12);
+      @include at-breakpoint($medium) {
+        @include span-columns(4 omega, 12);
+        margin-right: auto;
+      }
+
+    }
+    &.without-sidebar{
+      .primary {
+        @include at-breakpoint($medium) {
+          @include span-columns(12, 12);
+        }
+
+      }
+    }
+  }
+  &.full-width{
+    .site-content{
+      @include clearfix();
+    }
+
+  }
+
+}

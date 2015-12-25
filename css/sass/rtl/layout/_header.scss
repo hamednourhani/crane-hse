@@ -1,21 +1,285 @@
 .site-header{
-  background-color: $yellow;
+  background-color: $navy3;
   color : $navy2;
+  .header-bottom-image{
+    @include background(image_url('c-border-8px.png') bottom left repeat-x);
+    height : 8px;
+    width : 100%;
+  }
+  .banner-container{
+    @include background(image_url('tp-pattern.png') bottom left repeat);
+    .banner-wrapper{
+      padding-top : 2px;
+    }
+
+  }
+
 }
 .hero{
+  @include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+  min-height:90px;
+  position: relative;
+
+  .header-helmet-image{
+    position: absolute;
+    top:5px;
+    left : 10px;
+    height:169px;
+    width:166px;
+    @include background(image_url('safety-helmet-163px.png') top left no-repeat);
+    background-size: cover;
+    display : none;
+    @include at-breakpoint($larg68){
+      display : block;
+    }
+
+  }
   .site-logo-container{
+    min-height:150px;
+    text-align : center;
     @include span-columns(12,12);
+    position: relative;
+    img.site-logo{
+      position: relative;
+      width:160px;
+      max-width : 100%;
+    }
+    padding-top : 25px;
     @include at-breakpoint($medium){
-      @include span-columns(6,12);
+      @include span-columns(2,12);
+      margin-right : auto;
+      min-height: 90px;
+      padding-top : 0px;
+      
+      img.site-logo{
+
+        position: absolute;
+        top : 8px;
+        right : 0px;
+      }
     }
 
   }
   .top-contact-info{
+    padding-top : 10px;
+
+    direction: ltr;
+    text-align: center;
+      i:before{
+        margin: {
+          right: 5px;
+          left: 5px;
+        }
+      }
+
     @include span-columns(12,12);
     @include at-breakpoint($medium){
-      @include span-columns(6 omega ,12);
+      padding-top : 30px;
+
+      @include span-columns(5 omega ,12);
+      margin-right : auto;
+
+    }
+    ul {
+      margin : 0px;
+      padding : 0px;
+      li{
+            display: inline-block;
+      }
     }
 
+
+  }
+  .top-search-container{
+    padding-top : 10px;
+    padding-bottom : 10px;
+    @include span-columns(12,12);
+    @include at-breakpoint($medium){
+      @include span-columns(5 omega ,12);
+      margin-right : auto;
+      padding-top : 25px;
+
+
+    }
+    form.searchform{
+      text-align: center;
+
+      span#submit{
+        position: relative;
+        i::before {
+          position: absolute;
+          left: 16px;
+          top: -12px;
+        }
+      }
+      input#s{
+        @extend .def-transition;
+        opacity: 0.6;
+        border : 5px solid $yellow;
+        width : 190px;
+        height : 40px;
+        &:focus{
+          opacity: 1;
+          width : 220px;
+        }
+      }
+    }
+
+  }
+
+
+}
+nav.main-menu{
+  margin-bottom : 3px;
+  span.menu-toggler{
+    font-size : 140%;
+    color : $yellow;
+    text-align: center;
+
+    cursor: pointer;
+    i{
+      padding : 6px 9px;
+      border : 2px solid $yellow;
+    }
+    display : block;
+    margin : 10px auto 5px ;
+
+    @include at-breakpoint($medium){
+      display : none;
+    }
+  }
+  ul.main-nav{
+   margin : auto;
+    display: none;
+    @include at-breakpoint($medium){
+      display: block;
+      margin : 0px 180px 0px 20px;
+      a{
+        &:hover{
+          @include text-shadow(0px 0px 5px 2px $navy1);
+          color: $navy2;
+        }
+
+      }
+
+    }
+    a{
+      padding : 15px;
+      width : 100%;
+      background: transparent;
+      display : inline-block;
+
+
+      &:hover{
+        @extend .yellow-text-shadow;
+        color: $yellow;
+      }
+
+    }
+
+    li{
+      position: relative;
+      width : 100%;
+      @include at-breakpoint($medium){
+        width : inherit;
+      }
+      ul.sub-menu {
+        padding: 0px;
+        margin: 0px;
+        display : block;
+        a{
+          color : $sky-blue;
+          padding : 10px 20px;
+          &:hover{
+            color : $yellow;
+          }
+        }
+        @include at-breakpoint($medium) {
+          display: none;
+          position: absolute;
+          @include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+          color: $navy2;
+          z-index: 9999;
+          min-width: 220px;
+          top: 0px;
+          right: 100%;
+          a{
+            color : $navy2;
+            padding : 10px 20px;
+            &:hover {
+              color : $navy2;
+            }
+          }
+          li:hover > ul.sub-menu {
+            display: block;
+            a {
+              color: $navy2;
+              &:hover {
+                background: none;
+              }
+            }
+          }
+        }
+
+
+
+
+      }
+      &.menu-item-has-children > a::after{
+        @extend .fa;
+        @include at-breakpoint($medium){
+          content: "\f0d9";
+          vertical-align : middle;
+          //padding-left: 5px;
+          // width walker added
+          position: absolute;
+          right: auto;
+          left : 15px;
+          top: 14px;
+
+        }
+      }
+    }
+
+    &>li {
+      display: inline-block;
+      position: relative;
+      &>a:hover{
+        @include at-breakpoint($medium) {
+          @include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+          color: $navy2;
+        }
+      }
+      &.menu-item-has-children > a::after {
+        @extend .fa;
+        @include at-breakpoint($medium) {
+          content: "\f0d7";
+          vertical-align: middle;
+          //padding-left: 5px;
+          // width walker added
+          position: absolute;
+          right: 48%;
+          left: auto;
+          top: 38px;
+
+        }
+      }
+      &.current_page_item > a {
+        @include at-breakpoint($medium) {
+          @include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+          color: $navy2;
+        }
+      }
+
+      &:hover > ul.sub-menu {
+        @include at-breakpoint($medium) {
+          display: block;
+          top: 100%;
+          right: 0px;
+          left: auto;
+        }
+      }
+    }
   }
 
 

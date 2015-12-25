@@ -16,7 +16,7 @@ body {
 	
 	// @extend .back-gradiant-ltr;
 	background-color: $navy1;
-	@include background( image-url("tp-pattern.png") top left);
+	//@include background( image-url("tp-pattern.png") top left);
 
 	//background-color: $navy1;
 	color : $sky-blue;
@@ -66,6 +66,8 @@ a{
 	color : $sky-blue;
 	&:hover{
 		color : $yellow;
+		@extend .yellow-text-shadow;
+
 	}
 }
 // #wpadminbar{

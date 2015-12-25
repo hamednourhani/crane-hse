@@ -9,14 +9,15 @@ body {
 		direction: rtl;
 		text-align: right;
 	}
-	
-		
-	
+	@include background( image-url("crane-background4.jpg") top left no-repeat);
+	background-size: cover;
+	background-attachment: fixed;
+
+
+
 }
 .body-wrapper{
-	
-
-	
+	background-color: $navyGlass;
 		
 }
 .layout{

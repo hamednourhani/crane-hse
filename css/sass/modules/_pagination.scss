@@ -10,12 +10,14 @@ nav.pagination{
 		padding : 5px 10px;
 		background-color: $glass;
 		&:hover {
-			background-color: $sky-blue;
-			color : $white;
+			background-color: $yellow;
+			border-color : $yellow;
+			color : $navy2;
+
 		}
 		&.current{
 			background-color: $sky-blue;
-			color : $sky-blue;
+			color : $navy2;
 		}
 	}
 	span.page-numbers{

@@ -49,23 +49,27 @@
 	<!-- ********************************************************************* -->
 
 	<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-
 			<div class="header-inner">
 
 				<div class="hero">
+					<div class="header-helmet-image"></div>
+
 					<section class="layout">
 						<div class="site-logo-container">
-							<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/hse-logo-navy-120.png" alt="<?php echo get_bloginfo('url'); ?>"/>
+							<img class="site-logo" src="<?php echo get_template_directory_uri();?>/images/crane-hse-logo.png" alt="<?php echo get_bloginfo('url'); ?>"/>
 						</div>
 
 						<div class="top-contact-info">
 							<ul>
 								<li><i class="fa fa-phone"></i><span> +98 (21) 99999999 </span></li>
-								<li><i class="fa fa-envelope"></i><span> info@crane_hse.com </span></li>
+								<li><i class="fa fa-envelope"></i><span> info@crane-hse.com </span></li>
 							</ul>
+						</div>
 
+						<div class="top-search-container">
 							<?php echo crane_hse_menu_search_form(); ?>
 						</div>
+
 					</section>
 				</div><!-- hero -->
 			
@@ -91,6 +95,7 @@
 						)); ?>
 					</section>
 				</nav><!--main-menu-->
+				<div class="header-bottom-image"></div>
 
 				<div class="banner-container">
 					<section class="layout">

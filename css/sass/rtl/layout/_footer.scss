@@ -1,0 +1,33 @@
+.site-footer{
+  @include background(image_url('c-border-8px.png') top left repeat-x,image_url('tp-pattern.png')top left repeat);
+
+
+  .footer-widget-area {
+    padding-top : 30px;
+    padding-bottom : 20px;
+
+    .footer-first {
+      @include span-columns(12, 12);
+      @include at-breakpoint($medium) {
+        @include span-columns(3, 12);
+        margin-right: auto;
+        &.footer-col4 {
+          @include omega();
+        }
+
+      }
+
+    }
+  }
+  .credit-holder{
+    padding : 8px;
+    background-color: $navy3;
+    text-align :center;
+    font-size : 80%;
+    span.site-holder{
+    }
+  }
+
+
+
+}
