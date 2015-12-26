@@ -13,21 +13,14 @@
 
 			<div class="site-content">
 
-					<div class="primary">
 
 						<article class="hentry">
-							<?php if( get_post_meta(get_the_ID(),'_crane_hse_title',1 ) !== 'no'){ ?>
-								<header class="article-title">
-									<h1><?php the_title(); ?></h1>
-								</header>
-							<?php } ?>
 							<main class="article-body">
 								<?php the_content(); ?>
 
 							</main>
 						</article>
 
-					</div><!-- primary -->
 
 
 			</div>
