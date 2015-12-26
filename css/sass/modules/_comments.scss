@@ -1,5 +1,16 @@
 
 .comment-area{
+	h2.comments-title{
+			font-size : 22px;
+		padding-bottom : 10px;
+		padding-top: 10px;
+		border-bottom: 1px solid $sky-blue;
+		border-top: 1px solid $sky-blue;
+	}
+	ol{
+		padding : 0px;
+		margin : 0px;
+	}
 	img.avatar{
 		@include border-radius(50%);
 	}
@@ -64,8 +75,8 @@
 		   margin-left : 60px;
 		}
 	}
-	.even>article{ 
-		background-color: $grey1;
+	article{
+
 	}
 }
 #commentform{
@@ -74,6 +85,34 @@
     	padding: 0 10px;
     	display: inline-block;
     	width: 40%;
+	}
+	input {
+		padding : 5px 10px;
+		background-color: $white;
+		color : $navy1;
+		&#submit{
+			background-color: $navy1;
+			color : $sky-blue;
+			&:hover{
+				background-color: $yellow;
+				color : $navy2;
+			}
+		}
+		&[aria-required="true"]{
+			border-color : $yellow;
+		}
+	}
+	textarea{
+		padding : 10px;
+		color : $navy1;
+		border-color : $yellow;
+
+	}
+	i{
+		padding-left : 5px;
+	}
+	span.required{
+		color : $yellow;
 	}
 
 }

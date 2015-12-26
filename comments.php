@@ -25,7 +25,7 @@ if ( post_password_required() )
           'style'       => 'ol',
           'short_ping'  => true,
           'avatar_size' => 74,
-          'reply_text' => __('Reply<i class=" fa fa-mail-reply"></i>','naiau')
+          'reply_text' => __('Reply','naiau')
         ) );
       ?>
     </ol><!-- .comment-list -->

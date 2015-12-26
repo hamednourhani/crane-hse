@@ -102,38 +102,7 @@ function crane_hse_before_row_if_2( $field_args, $field ) {
 
 
 
-/******************************************************************/
-/*--------------------Product Features-------------------------------*/
-/******************************************************************/
-  add_action( 'cmb2_init', 'crane_hse_register_article_gallery_metabox' );
- function crane_hse_register_article_gallery_metabox() {
 
- 	$prefix = '_crane_hse_';
-
- 	/**
- 	 * Sample metabox to demonstrate each field type included
- 	 */
- 	$cmb_demo = new_cmb2_box( array(
- 		'id'            => $prefix . 'article_gallery',
- 		'title'         => __( 'Article Gallery', 'crane_hse' ),
- 		'object_types'  => array( 'post' ), // Post type
-		
- 	) );
-
-
-	
- 	$cmb_demo->add_field( array(
- 		'name'         => __( 'Images', 'crane_hse' ),
- 		'desc'         => __( 'Upload or add multiple images/attachments.', 'crane_hse' ),
- 		'id'           => $prefix . 'image_list',
-		'type'         => 'file_list',
-		'preview_size' => array( 163	, 163 ), // Default: array( 163, 163 )
-		
- 	) );
-
-
-	
- }
 /******************************************************************/
 /*--------------------Pharmacy-------------------------------*/
 /******************************************************************/
@@ -300,43 +269,4 @@ function crane_hse_register_page_banner_metabox() {
 	
 	
 }
-/******************************************************************/
-/*--------------------Product Features-------------------------------*/
-/******************************************************************/
-add_action( 'cmb2_init', 'crane_hse_register_intro_links_metabox' );
-function crane_hse_register_intro_links_metabox() {
-
-	$prefix = '_crane_hse_';
-
-	/**
-	 * Sample metabox to demonstrate each field type included
-	 */
-	$cmb_demo = new_cmb2_box( array(
-		'id'            => $prefix . 'intro_links',
-		'title'         => __( 'Language Links', 'crane_hse' ),
-		'object_types'  => array( 'page' ), // Post type
-
-	) );
-
-
-
-	$cmb_demo->add_field( array(
-		'name'         => __( 'English', 'crane_hse' ),
-		'desc'         => __( 'Enter English web site Url', 'crane_hse' ),
-		'id'           => $prefix . 'en_link',
-		'type'         => 'text_url',
-
-	) );
-	$cmb_demo->add_field( array(
-		'name'         => __( 'Persian', 'crane_hse' ),
-		'desc'         => __( 'Enter Persian web site Url', 'crane_hse' ),
-		'id'           => $prefix . 'fa_link',
-		'type'         => 'text_url',
-
-	) );
-
-
-
-}
-
 

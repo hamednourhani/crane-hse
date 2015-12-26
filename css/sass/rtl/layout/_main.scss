@@ -1,5 +1,5 @@
 .site-main{
-  margin-top : 30px;
+  margin-top : 40px;
   margin-bottom : 30px;
   .site-content {
     .primary {
@@ -8,6 +8,25 @@
         @include span-columns(8, 12);
         margin-right: auto;
       }
+      article.hentry{
+        ol li,ul li {
+          padding-right: 10px;
+        }
+        ul{
+          list-style: circle;
+        }
+        ol{
+          list-style: upper-latin;
+        }
+        .post-meta{
+          ul{
+            list-style: none;
+            i{
+              padding-left : 5px;
+            }
+          }
+        }
+      }
 
     }
     .secondary {
@@ -15,6 +34,29 @@
       @include at-breakpoint($medium) {
         @include span-columns(4 omega, 12);
         margin-right: auto;
+      }
+      .widget{
+        @include background(image_url('tp-pattern.png')top left repeat);
+        padding: 15px 20px;
+        margin-bottom : 20px;
+        border-bottom : 3px solid $yellow;
+        @include border-radius(10px);
+        h4.widgettitle{
+          font-size : 120%;
+          padding-bottom : 10px;
+          margin : 15px auto;
+          border-bottom : 1px solid $sky-blue;
+          padding-right : 30px;
+          @include background(image_url('red-flash-25px.png') top right no-repeat);
+
+        }
+        &.widget_search{
+          .searchform{
+            .screen-reader-text{
+              display: none;
+            }
+          }
+        }
       }
 
     }
@@ -32,6 +74,107 @@
       @include clearfix();
     }
 
+  }
+  &.single-article{
+    article.hentry{
+      .article-header{
+        @include clearfix();
+        border-bottom : 1px dashed $sky-blue;
+        .featured-image{
+          float :none;
+          text-align: center;
+          margin : auto;
+          @include at-breakpoint($medium) {
+            margin-left: 15px;
+            margin-right: 10px;
+            float: right;
+            text-align: right;
+          }
+          img{
+            @include border-radius(50%);
+            border : 4px solid $sky-blue;
+          }
+        }
+        .article-title{
+          padding : 10px 20px;
+          float : none;
+          text-align: center;
+          @include at-breakpoint($medium) {
+            float: right;
+            text-align : right;
+          }
+          h1{
+            padding-bottom : 10px;
+            padding-right :47px;
+            border-bottom: 1px solid $sky-blue;
+            font-size : 26px;
+            margin : 20px auto 10px;
+            @include background(image_url('helmet-40px.png')top right no-repeat);
+          }
+          .post-meta{
+            padding : 0px 10px;
+          }
+
+        }
+      }
+      .article-body{
+        padding : 20px;
+      }
+
+    }
+  }
+  &.archive-articles{
+    article.hentry{
+      border-bottom : 1px dashed $sky-blue;
+      @include clearfix();
+      .article-header{
+
+        text-align: center;
+        margin : auto;
+        @include span-columns(12,12);
+        @include at-breakpoint($medium) {
+          @include span-columns(4,12);
+
+          margin-right: auto;
+          text-align: right;
+        }
+        .featured-image{
+
+          img{
+            @include border-radius(50%);
+            border : 4px solid $sky-blue;
+          }
+        }
+
+      }
+      .article-body{
+        padding : 20px;
+        text-align: center;
+        @include  span-columns(12,12);
+        @include at-breakpoint($medium) {
+          @include span-columns(8 omega ,12);
+          text-align : right;
+        }
+        .article-title{
+          padding : 10px 20px;
+
+          h3{
+            padding-bottom : 10px;
+            margin-top : 5px;
+            padding-right :45px;
+            border-bottom: 1px solid $sky-blue;
+            font-size : 20px;
+            margin : 0px auto;
+            @include background(image_url('helmet-35px.png')top right no-repeat);
+          }
+          .post-meta{
+            padding : 0px 10px;
+          }
+
+        }
+      }
+
+    }
   }
 
 }

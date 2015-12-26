@@ -235,7 +235,7 @@ function crane_hse_theme_support() {
 	add_theme_support( 'post-thumbnails' );
 
 	// default thumb size
-	set_post_thumbnail_size(270,270 , true);
+	set_post_thumbnail_size(200,200 , true);
 	
 	// wp custom background (thx to @bransonwerner for update)
 	add_theme_support( 'custom-background',

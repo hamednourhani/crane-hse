@@ -13,37 +13,22 @@
 
 							<article class="hentry">
 								<header class="article-header">
-										<?php if( get_post_meta(get_the_ID(),'_crane_hse_title',1) !== 'no'){ ?>
+
 											<div class="featured-image">
 												<?php echo get_the_post_thumbnail();?>
 											</div>
 											<div class="article-title">
-												<a href="<?php the_permalink(); ?>">
 													<h1><?php the_title(); ?></h1>
-												</a>
+												<?php get_template_part('library/post','meta');?>
 											</div>
-											<div class="article-excerpt">
-												<?php the_excerpt(); ?>
-											</div>
-										<?php } ?>
+
+
 								</header>
 								<main class="article-body">
-									<?php
-											$article_gallery = get_post_meta(get_the_ID(),'_crane_hse_image_list' ,1);
-											if(!empty($article_gallery)){
-												foreach($article_gallery as $image_src){?>
-													<?php $img_thumb_src = crane_hse_get_image_src($image_src,'163x163'); ?>
-
-													<a href="<?php echo $image_src; ?>" rel="prettyPhoto" >
-														<img class="article-gallery-image" src="<?php echo $img_thumb_src; ?>" width="163" height="163" />
-													</a>
-
-
-												<?php }
-											}
-										the_content();
-										get_template_part('library/post','meta');
-									?>
+									<?php the_content();?>
+									<div class="comment-area">
+										<?php comments_template(); ?>
+									</div>
 
 								</main>
 							</article>

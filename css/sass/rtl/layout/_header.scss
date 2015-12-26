@@ -1,8 +1,11 @@
 .site-header{
+  .hero{
+    z-index:9999;
+  }
   background-color: $navy3;
   color : $navy2;
   .header-bottom-image{
-    @include background(image_url('c-border-8px.png') bottom left repeat-x);
+    @include background(image_url('c-border-8px.jpg') bottom left repeat-x);
     height : 8px;
     width : 100%;
   }
@@ -10,6 +13,20 @@
     @include background(image_url('tp-pattern.png') bottom left repeat);
     .banner-wrapper{
       padding-top : 2px;
+      h1{
+        padding-right : 45px;
+        @include background(image_url('work-45px.png') top right no-repeat);
+      }
+      .banner-inner{
+        text-align : center;
+        margin: auto;
+      }
+      .banner-search {
+        padding: 20px;
+        button#searchsubmit{
+          padding : 4px  10px;
+        }
+      }
     }
 
   }
@@ -116,6 +133,8 @@
         @extend .def-transition;
         opacity: 0.6;
         border : 5px solid $yellow;
+        background-color: $white;
+        color : $navy2;
         width : 190px;
         height : 40px;
         &:focus{
@@ -168,6 +187,7 @@ nav.main-menu{
       width : 100%;
       background: transparent;
       display : inline-block;
+      font-size: 110%;
 
 
       &:hover{

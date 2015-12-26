@@ -84,8 +84,6 @@ function crane_hse_woocommerce_support() {
 
 // Thumbnail sizes
 add_image_size( 'banner', 1040, 430, array( 'center', 'center' ) );
-add_image_size( 'product-thumb', 270, 270, array( 'center', 'center' ) );
-add_image_size( 'archive-thumb', 163, 163, array( 'center', 'center' ) );
 add_image_size( 'widget-thumb', 53, 53, array( 'center', 'center' ) );
 
 add_filter( 'image_size_names_choose', 'crane_hse_custom_image_sizes' );
@@ -93,8 +91,6 @@ add_filter( 'image_size_names_choose', 'crane_hse_custom_image_sizes' );
 function crane_hse_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
         'banner' => __('1040px by 430px'),
-        'archive-thumb' => __('270px by 270px'),
-        'product-thumb' => __('163px by 163px'),
         'widget-thumb' => __('53px by 53px'),
 
     ) );

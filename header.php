@@ -98,9 +98,9 @@
 				<div class="header-bottom-image"></div>
 
 				<div class="banner-container">
-					<section class="layout">
+
 						<?php echo get_template_part("library/banner","maker"); ?>
-					</section>
+
 				</div><!--banner-container-->
 
 			</div><!--header-inner-->
@@ -110,4 +110,3 @@
 <!-- ********************************************************************* -->
 <!--****************** Site Main ******************************************-->
 <!-- ********************************************************************* -->
-

@@ -13,21 +13,23 @@
 						<?php while(have_posts()) { the_post(); ?>
 
 							<article class="hentry">
+								<header class="article-header">
 
-
-								<main class="article-body">
 									<div class="featured-image">
 										<a href="<?php the_permalink(); ?>">
 											<?php echo get_the_post_thumbnail();?>
 										</a>
 									</div>
-								</main>
-								<header class="article-title">
 
-									<a href="<?php the_permalink(); ?>">
-										<h3><?php the_title(); ?></h3>
-									</a>
 								</header>
+								<main class="article-body">
+									<div class="article-title">
+										<a href="<?php the_permalink(); ?>">
+											<h3><?php the_title(); ?></h3>
+										</a>
+									</div>
+									<?php the_excerpt();?>
+								</main>
 							</article>
 						<?php } ?>
 					<?php } ?>

@@ -5,7 +5,7 @@
 <?php if(is_category() || is_tag() || is_tax()){ ?>
 		
 
-		
+		<section class="layout">
 			<div class="banner-wrapper">
 				<div class="single-cat-title">
 					<section class="layout">
@@ -13,6 +13,7 @@
 					</section>
 				</div>
 			</div>
+		</section>
 			
 
 <?php } elseif(is_singular()) {
@@ -36,9 +37,9 @@
 				break;
 		} ?>
 <?php } elseif(is_search()){ ?>
-	<?php echo '<div class="banner-wrapper"><div class="banner-inner">';
+	<?php echo '<section class="layout"><div class="banner-wrapper"><div class="banner-inner banner-search">';
 		  echo get_search_form('false');
-			echo '</div></div>';
+			echo '</div></div></section>';
 	?>
 <?php } else{ ?>
 		<div class="banner-space">
