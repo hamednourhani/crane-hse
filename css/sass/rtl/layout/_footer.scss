@@ -19,6 +19,10 @@
 
     }
     .widget{
+      ul{
+        padding : 0px;
+        margin : 0px;
+      }
       padding: 5px 20px;
       margin-bottom : 10px;
       h4.widgettitle{
@@ -35,6 +39,30 @@
           .screen-reader-text{
             display: none;
           }
+        }
+      }
+      &.widget_contact_info_widget{
+        i{
+          padding-left : 8px;
+        }
+        p{
+          margin : 5px;
+        }
+      }
+      &.widget_last_posts_by_cat_widget{
+        li{
+          @include clearfix();
+          padding: 5px;
+        }
+        img{
+          height : 36px;
+          width : 36px;
+          float : right;
+          margin-left : 8px;
+          border : 2px solid $sky-blue;
+        }
+        span{
+
         }
       }
     }

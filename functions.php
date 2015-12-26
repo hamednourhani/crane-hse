@@ -84,7 +84,7 @@ function crane_hse_woocommerce_support() {
 
 // Thumbnail sizes
 add_image_size( 'banner', 1040, 430, array( 'center', 'center' ) );
-add_image_size( 'widget-thumb', 53, 53, array( 'center', 'center' ) );
+add_image_size( 'widget-thumb', 36, 36, array( 'center', 'center' ) );
 
 add_filter( 'image_size_names_choose', 'crane_hse_custom_image_sizes' );
 

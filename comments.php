@@ -2,8 +2,8 @@
 /* The Template for displaying comments.
  *
  * @package WordPress
- * @subpackage naiau
- * @since naiau 0.1.0
+ * @subpackage crane_hse
+ * @since crane_hse 0.1.0
  */
 if ( post_password_required() )
   return;
@@ -15,7 +15,7 @@ if ( post_password_required() )
     <h2 class="comments-title">
       <i class="icon-comment"></i>
       <?php
-        printf( __( '%1$s thoughts on &ldquo;%2$s&rdquo;','naiau'), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+        printf( __( '%1$s thoughts on &ldquo;%2$s&rdquo;','crane_hse'), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
       ?>
     </h2>
 
@@ -25,19 +25,19 @@ if ( post_password_required() )
           'style'       => 'ol',
           'short_ping'  => true,
           'avatar_size' => 74,
-          'reply_text' => __('Reply','naiau')
+          'reply_text' => __('Reply','crane_hse')
         ) );
       ?>
     </ol><!-- .comment-list -->
 
   <nav class="comment-navigation" >
-      <div class="previous-comments"><?php previous_comments_link( __( '<i class="icon-left-open"></i> Older Comments', 'naiau' ) ); ?></div>
-      <div class="next-comments"><?php next_comments_link( __( 'Newer Comments <i class="icon-right-open"></i>', 'naiau' ) ); ?></div>
+      <div class="previous-comments"><?php previous_comments_link( __( '<i class="icon-left-open"></i> Older Comments', 'crane_hse' ) ); ?></div>
+      <div class="next-comments"><?php next_comments_link( __( 'Newer Comments <i class="icon-right-open"></i>', 'crane_hse' ) ); ?></div>
     </nav><!-- .comment-navigation -->  
 
 
     <?php if ( ! comments_open() && get_comments_number() ) : ?>
-    <p class="no-comments"><?php _e( 'Comments are closed.' , 'naiau' ); ?></p>
+    <p class="no-comments"><?php _e( 'Comments are closed.' , 'crane_hse' ); ?></p>
     <?php endif; ?>
 
   <?php endif; // have_comments() ?>
