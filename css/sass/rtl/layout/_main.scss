@@ -40,6 +40,7 @@
         padding: 15px 20px;
         margin-bottom : 20px;
         border-bottom : 3px solid $yellow;
+        border-right : 3px solid $yellow;
         @include border-radius(10px);
         ul{
           padding : 0px;
@@ -51,6 +52,7 @@
           margin : 15px auto;
           border-bottom : 1px solid $sky-blue;
           padding-right : 30px;
+          @include text-shadow(0px 0px 6px $red);
           @include background(image_url('red-flash-25px.png') top right no-repeat);
 
         }
