@@ -172,7 +172,7 @@ p {
   box-shadow: 0px 0px 6px 2px #FAC11C; }
 
 /* line 97, sass/rtl/base/_variables.scss */
-.yellow-text-shadow, nav.main-menu ul.main-nav a:hover {
+.yellow-text-shadow, nav.main-menu ul.main-nav a:hover, nav.second-menu ul.second-nav a:hover {
   text-shadow: 0px 0px 5px #FAC11C;
   text-shadow: 0px 0px 5px 2px #FAC11C; }
 
@@ -217,7 +217,7 @@ body {
     clear: both; }
 
 /* line 30, sass/rtl/base/_base.scss */
-.fa, nav.main-menu ul.main-nav li.menu-item-has-children > a::after {
+.fa, nav.main-menu ul.main-nav li.menu-item-has-children > a::after, nav.second-menu ul.second-nav li.menu-item-has-children > a::after {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -542,6 +542,136 @@ nav.main-menu {
       @media (min-width: 45em) {
         /* line 294, sass/rtl/layout/_header.scss */
         nav.main-menu ul.main-nav > li:hover > ul.sub-menu {
+          display: block;
+          top: 100%;
+          right: 0px;
+          left: auto; } }
+
+/* line 307, sass/rtl/layout/_header.scss */
+nav.second-menu {
+  margin-bottom: 3px; }
+  /* line 309, sass/rtl/layout/_header.scss */
+  nav.second-menu span.menu-toggler {
+    font-size: 140%;
+    color: #FAC11C;
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 5px; }
+    /* line 315, sass/rtl/layout/_header.scss */
+    nav.second-menu span.menu-toggler i {
+      padding: 6px 9px;
+      border: 2px solid #FAC11C; }
+    @media (min-width: 45em) {
+      /* line 309, sass/rtl/layout/_header.scss */
+      nav.second-menu span.menu-toggler {
+        display: none; } }
+  /* line 326, sass/rtl/layout/_header.scss */
+  nav.second-menu ul.second-nav {
+    margin: auto;
+    display: none; }
+    @media (min-width: 45em) {
+      /* line 326, sass/rtl/layout/_header.scss */
+      nav.second-menu ul.second-nav {
+        display: block;
+        margin: 0px 180px 0px 20px; }
+        /* line 333, sass/rtl/layout/_header.scss */
+        nav.second-menu ul.second-nav a:hover {
+          text-shadow: 0px 0px 5px #1F2D3A;
+          text-shadow: 0px 0px 5px 2px #1F2D3A;
+          color: #192530; } }
+    /* line 341, sass/rtl/layout/_header.scss */
+    nav.second-menu ul.second-nav a {
+      padding: 15px;
+      width: 100%;
+      background: transparent;
+      display: inline-block;
+      font-size: 110%; }
+      /* line 349, sass/rtl/layout/_header.scss */
+      nav.second-menu ul.second-nav a:hover {
+        color: #FAC11C; }
+    /* line 356, sass/rtl/layout/_header.scss */
+    nav.second-menu ul.second-nav li {
+      position: relative;
+      width: 100%; }
+      @media (min-width: 45em) {
+        /* line 356, sass/rtl/layout/_header.scss */
+        nav.second-menu ul.second-nav li {
+          width: inherit; } }
+      /* line 362, sass/rtl/layout/_header.scss */
+      nav.second-menu ul.second-nav li ul.sub-menu {
+        padding: 0px;
+        margin: 0px;
+        display: block; }
+        /* line 366, sass/rtl/layout/_header.scss */
+        nav.second-menu ul.second-nav li ul.sub-menu a {
+          color: #90A3B5;
+          padding: 10px 20px; }
+          /* line 369, sass/rtl/layout/_header.scss */
+          nav.second-menu ul.second-nav li ul.sub-menu a:hover {
+            color: #FAC11C; }
+        @media (min-width: 45em) {
+          /* line 362, sass/rtl/layout/_header.scss */
+          nav.second-menu ul.second-nav li ul.sub-menu {
+            display: none;
+            position: absolute;
+            background: url('../images/bg-ptrn-yellow.jpg?1450955004') top left repeat;
+            color: #192530;
+            z-index: 9999;
+            min-width: 220px;
+            top: 0px;
+            right: 100%; }
+            /* line 382, sass/rtl/layout/_header.scss */
+            nav.second-menu ul.second-nav li ul.sub-menu a {
+              color: #192530;
+              padding: 10px 20px; }
+              /* line 385, sass/rtl/layout/_header.scss */
+              nav.second-menu ul.second-nav li ul.sub-menu a:hover {
+                color: #192530; }
+            /* line 389, sass/rtl/layout/_header.scss */
+            nav.second-menu ul.second-nav li ul.sub-menu li:hover > ul.sub-menu {
+              display: block; }
+              /* line 391, sass/rtl/layout/_header.scss */
+              nav.second-menu ul.second-nav li ul.sub-menu li:hover > ul.sub-menu a {
+                color: #192530; }
+                /* line 393, sass/rtl/layout/_header.scss */
+                nav.second-menu ul.second-nav li ul.sub-menu li:hover > ul.sub-menu a:hover {
+                  background: none; } }
+      @media (min-width: 45em) {
+        /* line 404, sass/rtl/layout/_header.scss */
+        nav.second-menu ul.second-nav li.menu-item-has-children > a::after {
+          content: "\f0d9";
+          vertical-align: middle;
+          position: absolute;
+          right: auto;
+          left: 15px;
+          top: 14px; } }
+    /* line 420, sass/rtl/layout/_header.scss */
+    nav.second-menu ul.second-nav > li {
+      display: inline-block;
+      position: relative; }
+      @media (min-width: 45em) {
+        /* line 423, sass/rtl/layout/_header.scss */
+        nav.second-menu ul.second-nav > li > a:hover {
+          background: url('../images/bg-ptrn-yellow.jpg?1450955004') top left repeat;
+          color: #192530; } }
+      @media (min-width: 45em) {
+        /* line 429, sass/rtl/layout/_header.scss */
+        nav.second-menu ul.second-nav > li.menu-item-has-children > a::after {
+          content: "\f0d7";
+          vertical-align: middle;
+          position: absolute;
+          right: 48%;
+          left: auto;
+          top: 38px; } }
+      @media (min-width: 45em) {
+        /* line 443, sass/rtl/layout/_header.scss */
+        nav.second-menu ul.second-nav > li.current_page_item > a {
+          background: url('../images/bg-ptrn-yellow.jpg?1450955004') top left repeat;
+          color: #192530; } }
+      @media (min-width: 45em) {
+        /* line 450, sass/rtl/layout/_header.scss */
+        nav.second-menu ul.second-nav > li:hover > ul.sub-menu {
           display: block;
           top: 100%;
           right: 0px;

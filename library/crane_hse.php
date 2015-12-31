@@ -275,6 +275,7 @@ function crane_hse_theme_support() {
 	register_nav_menus(
 		array(
 			'main-menu' => __( 'The Main Menu', 'crane_hse' ),   // main nav in header
+			'second-menu' => __( 'The Second Menu', 'crane_hse' ),   // main nav in header
 		)
 	);
 

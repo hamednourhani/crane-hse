@@ -304,3 +304,159 @@ nav.main-menu{
 
 
 }
+nav.second-menu{
+  margin-bottom : 3px;
+  span.menu-toggler{
+    font-size : 140%;
+    color : $yellow;
+    text-align: center;
+
+    cursor: pointer;
+    i{
+      padding : 6px 9px;
+      border : 2px solid $yellow;
+    }
+    display : block;
+    margin : 10px auto 5px ;
+
+    @include at-breakpoint($medium){
+      display : none;
+    }
+  }
+  ul.second-nav{
+    margin : auto;
+    display: none;
+    @include at-breakpoint($medium){
+      display: block;
+      margin : 0px 180px 0px 20px;
+      a{
+        &:hover{
+          @include text-shadow(0px 0px 5px 2px $navy1);
+          color: $navy2;
+        }
+
+      }
+
+    }
+    a{
+      padding : 15px;
+      width : 100%;
+      background: transparent;
+      display : inline-block;
+      font-size: 110%;
+
+
+      &:hover{
+        @extend .yellow-text-shadow;
+        color: $yellow;
+      }
+
+    }
+
+    li{
+      position: relative;
+      width : 100%;
+      @include at-breakpoint($medium){
+        width : inherit;
+      }
+      ul.sub-menu {
+        padding: 0px;
+        margin: 0px;
+        display : block;
+        a{
+          color : $sky-blue;
+          padding : 10px 20px;
+          &:hover{
+            color : $yellow;
+          }
+        }
+        @include at-breakpoint($medium) {
+          display: none;
+          position: absolute;
+          @include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+          color: $navy2;
+          z-index: 9999;
+          min-width: 220px;
+          top: 0px;
+          right: 100%;
+          a{
+            color : $navy2;
+            padding : 10px 20px;
+            &:hover {
+              color : $navy2;
+            }
+          }
+          li:hover > ul.sub-menu {
+            display: block;
+            a {
+              color: $navy2;
+              &:hover {
+                background: none;
+              }
+            }
+          }
+        }
+
+
+
+
+      }
+      &.menu-item-has-children > a::after{
+        @extend .fa;
+        @include at-breakpoint($medium){
+          content: "\f0d9";
+          vertical-align : middle;
+          //padding-left: 5px;
+          // width walker added
+          position: absolute;
+          right: auto;
+          left : 15px;
+          top: 14px;
+
+        }
+      }
+    }
+
+    &>li {
+      display: inline-block;
+      position: relative;
+      &>a:hover{
+        @include at-breakpoint($medium) {
+          @include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+          color: $navy2;
+        }
+      }
+      &.menu-item-has-children > a::after {
+        @extend .fa;
+        @include at-breakpoint($medium) {
+          content: "\f0d7";
+          vertical-align: middle;
+          //padding-left: 5px;
+          // width walker added
+          position: absolute;
+          right: 48%;
+          left: auto;
+          top: 38px;
+
+        }
+      }
+      &.current_page_item > a {
+        @include at-breakpoint($medium) {
+          @include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+          color: $navy2;
+        }
+      }
+
+      &:hover > ul.sub-menu {
+        @include at-breakpoint($medium) {
+          display: block;
+          top: 100%;
+          right: 0px;
+          left: auto;
+        }
+      }
+    }
+  }
+
+
+}

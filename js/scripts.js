@@ -67,6 +67,11 @@ jQuery(document).ready(function($){
 		var main_menu = $('ul.main-nav');
 		main_menu.slideToggle();
 	});
+	$('span#second-menu-toggler').click(function(){
+		console.log("clicked");
+		var second_menu = $('ul.second-nav');
+		second_menu.slideToggle();
+	});
 	
 });	
 		
