@@ -619,11 +619,11 @@ nav.second-menu {
             right: 100%; }
             /* line 385, sass/rtl/layout/_header.scss */
             nav.second-menu ul.second-nav li ul.sub-menu a {
-              color: #192530;
+              color: #FFFFFF;
               padding: 10px 20px; }
               /* line 388, sass/rtl/layout/_header.scss */
               nav.second-menu ul.second-nav li ul.sub-menu a:hover {
-                color: #192530; }
+                color: #FFFFFF; }
             /* line 392, sass/rtl/layout/_header.scss */
             nav.second-menu ul.second-nav li ul.sub-menu li:hover > ul.sub-menu {
               display: block; }
