@@ -67,7 +67,7 @@
       margin-right : auto;
       min-height: 90px;
       padding-top : 0px;
-      
+
       img.site-logo{
 
         position: absolute;
@@ -265,10 +265,21 @@ nav.main-menu{
     &>li {
       display: inline-block;
       position: relative;
-      &>a:hover{
-        @include at-breakpoint($medium) {
-          background-color : $red;
-          color: $white;
+      &>a{
+        @extend .def-box-shadow;
+        @extend .def-transition;
+        @include background(image_url("tp-pattern.png"));
+        @include border-radius(4px);
+        padding : 12px;
+        margin : 7px;
+        text-align: center;
+        &:hover {
+          @include at-breakpoint($medium) {
+            background: none;
+            background-color: $red;
+            color: $white;
+
+          }
         }
       }
       &.menu-item-has-children > a::after {
@@ -288,6 +299,7 @@ nav.main-menu{
       &.current_page_item > a {
         @include at-breakpoint($medium) {
           //@include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+          background: none;
           background-color : $red;
           color: $white;
         }
@@ -423,12 +435,22 @@ nav.second-menu{
     &>li {
       display: inline-block;
       position: relative;
-      &>a:hover{
-        @include at-breakpoint($medium) {
-          //@include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
-          background-color : $red;
-          color: $white;
-        }
+      &>a{
+          @extend .def-box-shadow;
+           @extend .def-transition;
+          @include background(image_url("tp-pattern.png"));
+           @include border-radius(4px);
+           padding : 12px;
+           margin : 7px;
+          text-align: center;
+          &:hover {
+            @include at-breakpoint($medium) {
+              background: none;
+              background-color: $red;
+              color: $white;
+
+            }
+          }
       }
       &.menu-item-has-children > a::after {
         @extend .fa;
@@ -447,6 +469,7 @@ nav.second-menu{
       &.current_page_item > a {
         @include at-breakpoint($medium) {
           //@include background(image_url('bg-ptrn-yellow.jpg') top left repeat);
+          background : none;
           background-color : $red;
           color: $white;
         }

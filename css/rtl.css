@@ -145,7 +145,7 @@ p {
 /*------ colors -----------*/
 /*----------------transition-shadow----------------------*/
 /* line 83, sass/rtl/base/_variables.scss */
-.def-transition, .hero .top-search-container form.searchform input#s {
+.def-transition, .hero .top-search-container form.searchform input#s, nav.main-menu ul.main-nav > li > a, nav.second-menu ul.second-nav > li > a {
   -moz-transition: all 0.3s ease-in-out 0s;
   -o-transition: all 0.3s ease-in-out 0s;
   -webkit-transition: all 0.3s ease-in-out;
@@ -154,7 +154,7 @@ p {
 
 /*----------------box-shadow----------------------*/
 /* line 88, sass/rtl/base/_variables.scss */
-.def-box-shadow {
+.def-box-shadow, nav.main-menu ul.main-nav > li > a, nav.second-menu ul.second-nav > li > a {
   -moz-box-shadow: 0px 0px 6px #90A3B5;
   -webkit-box-shadow: 0px 0px 6px #90A3B5;
   box-shadow: 0px 0px 6px #90A3B5; }
@@ -518,13 +518,23 @@ nav.main-menu {
     nav.main-menu ul.main-nav > li {
       display: inline-block;
       position: relative; }
+      /* line 268, sass/rtl/layout/_header.scss */
+      nav.main-menu ul.main-nav > li > a {
+        background: url('../images/tp-pattern.png?1450952410');
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 12px;
+        margin: 7px;
+        text-align: center; }
+        @media (min-width: 45em) {
+          /* line 276, sass/rtl/layout/_header.scss */
+          nav.main-menu ul.main-nav > li > a:hover {
+            background: none;
+            background-color: red;
+            color: #FFFFFF; } }
       @media (min-width: 45em) {
-        /* line 268, sass/rtl/layout/_header.scss */
-        nav.main-menu ul.main-nav > li > a:hover {
-          background-color: red;
-          color: #FFFFFF; } }
-      @media (min-width: 45em) {
-        /* line 274, sass/rtl/layout/_header.scss */
+        /* line 285, sass/rtl/layout/_header.scss */
         nav.main-menu ul.main-nav > li.menu-item-has-children > a::after {
           content: "\f0d7";
           vertical-align: middle;
@@ -533,22 +543,23 @@ nav.main-menu {
           left: auto;
           top: 38px; } }
       @media (min-width: 45em) {
-        /* line 288, sass/rtl/layout/_header.scss */
+        /* line 299, sass/rtl/layout/_header.scss */
         nav.main-menu ul.main-nav > li.current_page_item > a {
+          background: none;
           background-color: red;
           color: #FFFFFF; } }
       @media (min-width: 45em) {
-        /* line 296, sass/rtl/layout/_header.scss */
+        /* line 308, sass/rtl/layout/_header.scss */
         nav.main-menu ul.main-nav > li:hover > ul.sub-menu {
           display: block;
           top: 100%;
           right: 0px;
           left: auto; } }
 
-/* line 309, sass/rtl/layout/_header.scss */
+/* line 321, sass/rtl/layout/_header.scss */
 nav.second-menu {
   margin-bottom: 3px; }
-  /* line 311, sass/rtl/layout/_header.scss */
+  /* line 323, sass/rtl/layout/_header.scss */
   nav.second-menu span.menu-toggler {
     font-size: 140%;
     color: #FAC11C;
@@ -556,58 +567,58 @@ nav.second-menu {
     cursor: pointer;
     display: block;
     margin: 10px auto 5px; }
-    /* line 317, sass/rtl/layout/_header.scss */
+    /* line 329, sass/rtl/layout/_header.scss */
     nav.second-menu span.menu-toggler i {
       padding: 6px 9px;
       border: 2px solid #FAC11C; }
     @media (min-width: 45em) {
-      /* line 311, sass/rtl/layout/_header.scss */
+      /* line 323, sass/rtl/layout/_header.scss */
       nav.second-menu span.menu-toggler {
         display: none; } }
-  /* line 328, sass/rtl/layout/_header.scss */
+  /* line 340, sass/rtl/layout/_header.scss */
   nav.second-menu ul.second-nav {
     margin: auto;
     display: none; }
     @media (min-width: 45em) {
-      /* line 328, sass/rtl/layout/_header.scss */
+      /* line 340, sass/rtl/layout/_header.scss */
       nav.second-menu ul.second-nav {
         display: block;
         margin: 0px 180px 0px 20px; }
-        /* line 335, sass/rtl/layout/_header.scss */
+        /* line 347, sass/rtl/layout/_header.scss */
         nav.second-menu ul.second-nav a:hover {
           color: #FFFFFF; } }
-    /* line 343, sass/rtl/layout/_header.scss */
+    /* line 355, sass/rtl/layout/_header.scss */
     nav.second-menu ul.second-nav a {
       padding: 15px;
       width: 100%;
       background: transparent;
       display: inline-block;
       font-size: 110%; }
-      /* line 351, sass/rtl/layout/_header.scss */
+      /* line 363, sass/rtl/layout/_header.scss */
       nav.second-menu ul.second-nav a:hover {
         color: #FAC11C; }
-    /* line 358, sass/rtl/layout/_header.scss */
+    /* line 370, sass/rtl/layout/_header.scss */
     nav.second-menu ul.second-nav li {
       position: relative;
       width: 100%; }
       @media (min-width: 45em) {
-        /* line 358, sass/rtl/layout/_header.scss */
+        /* line 370, sass/rtl/layout/_header.scss */
         nav.second-menu ul.second-nav li {
           width: inherit; } }
-      /* line 364, sass/rtl/layout/_header.scss */
+      /* line 376, sass/rtl/layout/_header.scss */
       nav.second-menu ul.second-nav li ul.sub-menu {
         padding: 0px;
         margin: 0px;
         display: block; }
-        /* line 368, sass/rtl/layout/_header.scss */
+        /* line 380, sass/rtl/layout/_header.scss */
         nav.second-menu ul.second-nav li ul.sub-menu a {
           color: #90A3B5;
           padding: 10px 20px; }
-          /* line 371, sass/rtl/layout/_header.scss */
+          /* line 383, sass/rtl/layout/_header.scss */
           nav.second-menu ul.second-nav li ul.sub-menu a:hover {
             color: #FAC11C; }
         @media (min-width: 45em) {
-          /* line 364, sass/rtl/layout/_header.scss */
+          /* line 376, sass/rtl/layout/_header.scss */
           nav.second-menu ul.second-nav li ul.sub-menu {
             display: none;
             position: absolute;
@@ -617,24 +628,24 @@ nav.second-menu {
             min-width: 220px;
             top: 0px;
             right: 100%; }
-            /* line 385, sass/rtl/layout/_header.scss */
+            /* line 397, sass/rtl/layout/_header.scss */
             nav.second-menu ul.second-nav li ul.sub-menu a {
               color: #FFFFFF;
               padding: 10px 20px; }
-              /* line 388, sass/rtl/layout/_header.scss */
+              /* line 400, sass/rtl/layout/_header.scss */
               nav.second-menu ul.second-nav li ul.sub-menu a:hover {
                 color: #FFFFFF; }
-            /* line 392, sass/rtl/layout/_header.scss */
+            /* line 404, sass/rtl/layout/_header.scss */
             nav.second-menu ul.second-nav li ul.sub-menu li:hover > ul.sub-menu {
               display: block; }
-              /* line 394, sass/rtl/layout/_header.scss */
+              /* line 406, sass/rtl/layout/_header.scss */
               nav.second-menu ul.second-nav li ul.sub-menu li:hover > ul.sub-menu a {
                 color: #192530; }
-                /* line 396, sass/rtl/layout/_header.scss */
+                /* line 408, sass/rtl/layout/_header.scss */
                 nav.second-menu ul.second-nav li ul.sub-menu li:hover > ul.sub-menu a:hover {
                   background: none; } }
       @media (min-width: 45em) {
-        /* line 407, sass/rtl/layout/_header.scss */
+        /* line 419, sass/rtl/layout/_header.scss */
         nav.second-menu ul.second-nav li.menu-item-has-children > a::after {
           content: "\f0d9";
           vertical-align: middle;
@@ -642,17 +653,27 @@ nav.second-menu {
           right: auto;
           left: 15px;
           top: 14px; } }
-    /* line 423, sass/rtl/layout/_header.scss */
+    /* line 435, sass/rtl/layout/_header.scss */
     nav.second-menu ul.second-nav > li {
       display: inline-block;
       position: relative; }
+      /* line 438, sass/rtl/layout/_header.scss */
+      nav.second-menu ul.second-nav > li > a {
+        background: url('../images/tp-pattern.png?1450952410');
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        padding: 12px;
+        margin: 7px;
+        text-align: center; }
+        @media (min-width: 45em) {
+          /* line 446, sass/rtl/layout/_header.scss */
+          nav.second-menu ul.second-nav > li > a:hover {
+            background: none;
+            background-color: red;
+            color: #FFFFFF; } }
       @media (min-width: 45em) {
-        /* line 426, sass/rtl/layout/_header.scss */
-        nav.second-menu ul.second-nav > li > a:hover {
-          background-color: red;
-          color: #FFFFFF; } }
-      @media (min-width: 45em) {
-        /* line 433, sass/rtl/layout/_header.scss */
+        /* line 455, sass/rtl/layout/_header.scss */
         nav.second-menu ul.second-nav > li.menu-item-has-children > a::after {
           content: "\f0d7";
           vertical-align: middle;
@@ -661,12 +682,13 @@ nav.second-menu {
           left: auto;
           top: 38px; } }
       @media (min-width: 45em) {
-        /* line 447, sass/rtl/layout/_header.scss */
+        /* line 469, sass/rtl/layout/_header.scss */
         nav.second-menu ul.second-nav > li.current_page_item > a {
+          background: none;
           background-color: red;
           color: #FFFFFF; } }
       @media (min-width: 45em) {
-        /* line 455, sass/rtl/layout/_header.scss */
+        /* line 478, sass/rtl/layout/_header.scss */
         nav.second-menu ul.second-nav > li:hover > ul.sub-menu {
           display: block;
           top: 100%;
@@ -981,6 +1003,24 @@ nav.second-menu {
 
 /* dividers style */
 /* table style */
+/* line 2, sass/rtl/modules/_tables.scss */
+table {
+  width: 100%;
+  border: 2px solid #FAC11C;
+  border-bottom-width: 2px;
+  color: #FFFFFF;
+  font-size: 110%; }
+  /* line 8, sass/rtl/modules/_tables.scss */
+  table tr {
+    width: 100%;
+    background-color: #1F2D3A; }
+    /* line 11, sass/rtl/modules/_tables.scss */
+    table tr:nth-of-type(2n) {
+      background-color: #17222C; }
+  /* line 15, sass/rtl/modules/_tables.scss */
+  table td {
+    padding: 10px 20px; }
+
 /* other style */
 /* line 4, sass/rtl/modules/_comments.scss */
 .comment-area .comment-body {
