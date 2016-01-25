@@ -61,8 +61,8 @@
 
 						<div class="top-contact-info">
 							<ul>
-								<li><i class="fa fa-phone"></i><span> +98 (21) 99999999 </span></li>
-								<li><i class="fa fa-envelope"></i><span> info@crane-hse.com </span></li>
+<!--								<li><i class="fa fa-phone"></i><span> +98 (21) 99999999 </span></li>-->
+								<li><i class="fa fa-envelope"></i><span><a href="mailto:info@crane-hse.com">info@crane-hse.com</a> </span></li>
 							</ul>
 						</div>
 

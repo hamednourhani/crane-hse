@@ -88,6 +88,9 @@
           left: 5px;
         }
       }
+    a{
+      color : $navy1;
+    }
 
     @include span-columns(12,12);
     @include at-breakpoint($medium){

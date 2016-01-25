@@ -1,1 +1,15 @@
-
+#login_form_user_login {
+  padding-right: 30px;
+}
+#login_form_user_pass{
+  padding-right: 30px;
+}
+.wpProQuiz_questionList{
+  background-color: $red !important;
+  border-color: $yellow !important;
+}
+.wpProQuiz_questionListItem{
+  label{
+    color : $white;
+  }
+}
